@@ -17,7 +17,7 @@ Use the search bar below to filter by Family, Genus, or Species. Click the colum
 //| warning: false
 
 // 1. Load the data
-data = FileAttachment("/data/database.csv").csv({ typed: true })
+data = FileAttachment("data/database.csv").csv({ typed: true })
 
 // 2. Search Bar
 viewof searchResults = Inputs.search(data, { 
