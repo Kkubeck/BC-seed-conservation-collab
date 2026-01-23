@@ -1,0 +1,27 @@
+---
+title: "Balsamorhiza sagittata"
+subtitle: "Arrowleaf Balsamroot"
+---
+
+**Family:** [Insert Family]
+**Conservation Status:** [Insert Status]
+
+## Seed Morphology
+* **Fruit Type:** [Insert Type]
+* **Seed Type:** [Insert Description]
+* **Seeds per Fruit:** [Insert Count]
+* **Harvest Period:** [Insert Season]
+
+## Propagation Protocol
+* **Nursery Code:** [Insert Code]
+* **Dormancy Type:** [Insert Dormancy Type]
+* **Scarification/Treatment:** * [Describe treatment]
+* **Stratification:**
+    * [Describe warm/cold stratification requirements]
+
+## Production Notes
+* **Timeline:** [Insert Production Time]
+* **Container:** [Insert Container Type]
+* **Media:** [Insert Media Requirements]
+
+> **Research Venue:** [Insert proposed research topics]

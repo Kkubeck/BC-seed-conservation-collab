@@ -1,0 +1,13 @@
+---
+title: "Glossary of Terms"
+---
+
+Physical Dormancy
+: A type of dormancy where the seed coat is impermeable to water.
+
+Stratification
+: The process of pretreating seeds to simulate natural winter conditions (moist-chilling).
+
+Scarification
+: 
+: Weakening, opening, or otherwise altering the coat of a seed to encourage germination.

@@ -1,0 +1,29 @@
+---
+title: "Juniperus scopulorum"
+subtitle: "Rocky Mountain Juniper"
+---
+
+[cite_start]**Family:** Cupressaceae [cite: 45]
+[cite_start]**Conservation Status:** G5 (Secure) [cite: 51]
+
+## Seed Morphology
+* [cite_start]**Fruit Type:** Fleshy cone [cite: 47]
+* [cite_start]**Seed Type:** Hard-shelled, unwinged [cite: 48]
+* [cite_start]**Seeds per Fruit:** 2 [cite: 49]
+* [cite_start]**Harvest Period:** September - October [cite: 50]
+
+## Propagation Challenges
+[cite_start]Propagating from seed is a difficult and lengthy process, primarily due to a complex "double dormancy"[cite: 55].
+1.  [cite_start]**Physical Dormancy:** The seed possesses a hard, thick seed coat[cite: 56].
+2.  [cite_start]**Physiological Dormancy:** The embryo contains "chemical factors" that require a long after-ripening period[cite: 56].
+
+## Protocol
+* [cite_start]**Nursery Code:** PY, PD, 120d ws, 150d cs [cite: 53]
+* [cite_start]**Scarification Warning:** Strong chemical scarification with strong acids like $H_2SO_4$ is **not recommended** as it can carbonize and kill the seed[cite: 57].
+* [cite_start]**Recommended Treatment:** Some work suggests a **Citric Acid** soak (a light acid) can increase germination by removing inhibitors and softening the seed coat[cite: 58].
+* [cite_start]**Timeline:** ~2 years from germination[cite: 60].
+
+## Production Notes
+* [cite_start]Transplants fine and can be sown together in a seed pot (tray) and transferred to production pots post-germination[cite: 59].
+
+> [cite_start]**Research Venue:** Citric acid soak for seed scarification/inhibitor removal, and exposing the seed to plasma[cite: 61].

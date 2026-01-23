@@ -1,0 +1,26 @@
+---
+title: "Abronia umbellata"
+subtitle: "Pink Sand-verbena"
+---
+
+[cite_start]**Conservation Status:** G4G5T2, Red Listed, Endangered [cite: 82]
+**Ecological Notes:** Coastal dunes, short-lived annual. [cite_start]Susceptible to disturbance[cite: 90].
+
+## Seed Morphology
+* [cite_start]**Fruit Type:** Anthocarp with achene [cite: 78]
+* [cite_start]**Challenge:** The seed (achene) is enclosed within a woody structure derived from the parent plant (the anthocarp)[cite: 86].
+* [cite_start]**Risks:** Strong mechanical forces used to break the anthocarp can destroy the embryo[cite: 88].
+
+## Propagation Protocol
+[cite_start]**Nursery Code:** PY, PD [cite: 84]
+
+### Method A: Mechanical Scarification (Standardized)
+1.  [cite_start]**Equipment:** Industrial rock/sand tumbler[cite: 92].
+2.  [cite_start]**Media:** Mix achenes with coarse beach sand and fine grit[cite: 93].
+3.  [cite_start]**Duration:** Optimize through small-scale trials; initial trial duration set at **15 minutes**[cite: 93].
+
+### Method B: Chemical Alternative
+* [cite_start]If mechanical abrasion proves inconsistent, trials using diluted sulfuric acid treatments (e.g., 10–20 minutes) should be conducted as a rapid, high-yield alternative[cite: 94].
+
+## Production Notes
+* [cite_start]**Media:** Deep-plugs, sandy, low-nutrient media[cite: 89].

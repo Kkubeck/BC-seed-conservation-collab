@@ -1,0 +1,42 @@
+---
+title: "Limnanthes macounii"
+subtitle: "Macoun's Meadow-foam"
+---
+
+[cite_start]**Family:** Limnanthaceae [cite: 118]
+[cite_start]**Conservation Status:** G2, Blue Listed, Special Concern [cite: 124]
+
+![Close-up of Limnanthes macounii in bloom](../images/limnanthes_bloom.jpg){#fig-limnanthes width=60% fig-align="left"}
+
+
+## Seed Morphology
+* [cite_start]**Fruit Type:** Schizocarp [cite: 120]
+* [cite_start]**Seed Type:** Angular nutlet with a tuberculate (warty) tip[cite: 121, 125].
+* [cite_start]**Dormancy:** Exhibits strong dormancy[cite: 125].
+
+::: {.callout-important}
+## The Hydrological Imperative
+[cite_start]This species is an **obligate winter annual** adapted to vernal pools. Success depends on simulating this environment:
+* [cite_start]**Cool Germination:** Requires temperatures <10°C.
+* [cite_start]**Winter Saturation:** Soil must be saturated from **October to March**.
+:::
+
+## Production Timeline
+
+This species requires strict adherence to the seasonal cycle.
+
+```{mermaid}
+%%| fig-cap: "Annual Production Cycle for Limnanthes macounii"
+gantt
+    title Vernal Pool Simulation Cycle
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b
+
+    section Hydrology
+    Dry/Dormant       :done,    des-1, 2025-06-01, 2025-09-30
+    Saturation Period :active,  wet-1, 2025-10-01, 2026-03-31
+    
+    section Nursery Work
+    Sow (Natural Cooling) :crit,    sow, 2025-09-01, 30d
+    Growth                :         grow, 2025-10-01, 2026-05-30
+    Senescence & Harvest  :         die, 2026-06-01, 30d

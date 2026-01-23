@@ -1,0 +1,47 @@
+---
+title: "Species Database"
+subtitle: "Historical Accession Records (1970-Present)"
+---
+
+This database catalogs every native BC seed plant (and select ferns) grown at the UBC Botanical Garden since 1970.
+
+**Instructions:**
+Use the search bar below to filter by Family, Genus, or Species. Click the column headers to sort.
+
+:::{.callout-note appearance="simple"}
+**Download Data:** [Click here to download the full CSV file](/data/ubcbg_unique_taxa_with_accessions.csv)
+:::
+
+```{ojs}
+//| echo: false
+//| warning: false
+
+// 1. Load the data
+data = FileAttachment("/data/ubcbg_unique_taxa_with_accessions.csv").csv({ typed: true })
+
+// 2. Search Bar
+viewof searchResults = Inputs.search(data, { 
+  label: "Search Database:",
+  placeholder: "Type a Family, Genus, Species, or Year...", // <--- Updated Text
+  columns: ["FamilyEx", "Genus", "Species", "AccessionList"]
+})
+
+// 3. Table Display
+Inputs.table(searchResults, {
+  columns: [
+    "FamilyEx",
+    "Genus",
+    "Species",
+    "AccessionList"
+  ],
+  header: {
+    FamilyEx: "Family",
+    Genus: "Genus",
+    Species: "Species",
+    AccessionList: "Accession Codes"
+  },
+  sort: true,
+  rows: 20,
+  layout: "auto"
+})
+```

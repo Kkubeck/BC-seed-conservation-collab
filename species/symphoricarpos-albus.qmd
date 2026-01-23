@@ -1,0 +1,23 @@
+---
+title: "Symphoricarpos albus"
+subtitle: "Common Snowberry"
+---
+
+[cite_start]**Family:** Caprifoliaceae [cite: 63]
+[cite_start]**Conservation Status:** G5 (Secure) [cite: 69]
+
+## Seed Morphology
+* [cite_start]**Fruit Type:** Drupe [cite: 65]
+* [cite_start]**Seed Type:** Small, egg-shaped, somewhat flattened stone seeds [cite: 66]
+* [cite_start]**Harvest Period:** Fall (persistent fruit) [cite: 68]
+
+## Propagation Protocol
+* [cite_start]**Nursery Code:** PY, MD/PD [cite: 71]
+* **Dormancy Type:** Morphological Dormancy (MD). [cite_start]The main challenge is that the embryo is underdeveloped when the fruit is shed; only time can coax it to germinate[cite: 73].
+* [cite_start]**Treatment:** Despite being a taxon with a very hard seed coat, acid treatment may not be necessary—just time[cite: 74].
+* [cite_start]**Key Consideration:** Do not rush development; keep moist during treatment and use alternate temperature regimes[cite: 70].
+
+## Production Notes
+* [cite_start]**Timeline:** ~3 years to liner size[cite: 75].
+
+> [cite_start]**Research Venue:** Compare chemical stratification vs. none; investigate temperature regimes[cite: 76].

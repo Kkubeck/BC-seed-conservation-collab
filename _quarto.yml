@@ -1,0 +1,55 @@
+project:
+  type: website
+  output-dir: docs
+
+bibliography: references.bib
+
+website:
+  # 1. NEW SITE TITLE
+  title: "BC Native Seed Protocols"
+  description: "Germination data and yield optimization for British Columbia's native flora."
+  repo-url: "https://github.com/YOUR-USERNAME/YOUR-REPO"
+  
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Overview"
+        contents:
+          - text: "Project Scope"
+            file: index.qmd
+          - text: "Methodologies"
+            file: methodologies.qmd
+          - text: "Species Database"
+            file: database.qmd
+          - text: "Student Portal"
+            file: contribute.qmd
+          - text: "Glossary"
+            file: glossary.qmd
+            
+      - section: "Species Case Studies"
+        contents:
+          - species/arctostaphylos-uva-ursi.qmd
+          - species/juniperus-scopulorum.qmd
+          - species/symphoricarpos-albus.qmd
+          - species/abronia-umbellata.qmd
+          - species/silene-spaldingii.qmd
+          - species/limnanthes-macounii.qmd
+          - species/meconella-oregana.qmd
+          - species/castilleja-victoriae.qmd
+          - species/balsamorhiza-sagittata.qmd
+      
+      - section: "Reference"
+        contents:
+          - text: "Bibliography"
+            file: references.qmd
+
+format:
+  html:
+    # 2. NEW VISUAL THEME
+    theme: flatly
+    toc: true
+    toc-depth: 3
+    css: styles.css
+
+lightbox: true

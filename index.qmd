@@ -1,0 +1,70 @@
+---
+title: "Project Overview"
+subtitle: "Optimizing Germination for British Columbia's Native Flora"
+---
+
+## Mission Statement
+
+This project serves as a living repository for germination protocols focused on British Columbia's native seed plants. The primary objective is to move beyond simple viability testing and towards **yield optimization**—developing reliable, scalable methods for conservation and restoration.
+
+Data collected here is intended to support the **Provincial Seed Bank** by documenting:
+1.  **Germination Yield:** Maximizing the conversion of stored seed to viable liner plants.
+2.  **Protocol Reliability:** Establishing standardized methods for diverse taxa.
+3.  **Resource Management:** Reducing the waste of valuable wild-collected genetic material.
+
+## The Challenge of Diversity
+
+Native propagation is not a monolith. Each species presented in this database has been selected because it demonstrates a specific biological barrier or propagation challenge. By solving these specific "puzzle pieces," we build a broader toolkit for the province's flora.
+
+### Key Biological Barriers
+
+::: {.grid}
+
+::: {.g-col-6}
+### 🔒 Physical Dormancy
+*Challenge:* Impermeable seed coats that prevent water uptake.
+*Demonstrator Species:* **Arctostaphylos uva-ursi**
+*Focus:* Acid scarification limits and mechanical alternatives.
+:::
+
+::: {.g-col-6}
+### 🧩 Complex Dormancy
+*Challenge:* Seeds requiring multiple environmental cues (e.g., warm then cold periods) or chemical triggers.
+*Demonstrator Species:* **Juniperus scopulorum**
+*Focus:* Mitigating "double dormancy" without damaging embryos.
+:::
+
+::: {.g-col-6}
+### 🤝 Ecological Dependence
+*Challenge:* Species that require biological partners to thrive.
+*Demonstrator Species:* **Castilleja victoriae**
+*Focus:* Host-parasite co-cultivation and hydrological simulation.
+:::
+
+::: {.g-col-6}
+### 📉 Low Viability & Inbreeding
+*Challenge:* Rare taxa with compromised genetic health or "grouchy" seed sets.
+*Demonstrator Species:* **Silene spaldingii**
+*Focus:* Maximizing yield from limited, high-value inputs.
+:::
+
+:::
+
+## Using This Guide
+
+This documentation is structured to provide both theoretical background and actionable protocols.
+
+* **Methodologies:** General techniques applicable across genera (e.g., plasma treatment, stratification).
+* **Species Profiles:** Detailed, taxon-specific recipes including phenology, harvest timing, and nursery codes.
+
+---
+
+## Get Involved
+
+Are you a student or researcher interested in contributing?
+We are actively seeking collaborators to help document the 935+ taxa in our collection.
+
+::: {.callout-tip}
+## Student Researchers
+Visit the [**Student Portal**](contribute.qmd) to claim a species and access the research templates.
+:::

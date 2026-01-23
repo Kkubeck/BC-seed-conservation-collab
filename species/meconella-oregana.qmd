@@ -1,0 +1,25 @@
+---
+title: "Meconella oregana"
+subtitle: "White Meconella"
+---
+
+**Family:** Papaveraceae
+**Conservation Status:** G2, Red Listed, Endangered
+
+## Seed Morphology
+* **Fruit Type:** Capsule
+* **Seed Type:** Tiny, smooth, shiny, and ovate to reniform (kidney-shaped).
+* **Harvest Period:** Late April
+
+## Propagation Protocol
+* **Nursery Code:** PD, cool germinator.
+* **Timing:** Winter annual; requires cool germination.
+
+## Conservation Strategy
+* **Population Dynamics:** Species exhibits extreme fluctuation (e.g., 60 to 1,209 individuals at a single site over consecutive years).
+* **Ex Situ Management:** The nursery must maintain a **genetically diverse buffer stock**, independent of unpredictable annual field census numbers.
+* **Maternal Lines:** Maternal lines might require constant maintenance due to low seed viability.
+
+## Production Notes
+* **Product Form:** Plugs to be patched into appropriate microsites.
+* **Habitat:** Thin soils on rock outcrops, meadows, and bluffs.

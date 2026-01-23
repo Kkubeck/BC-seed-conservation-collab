@@ -1,0 +1,98 @@
+---
+title: "Methodologies"
+subtitle: "Dormancy Breaking & Yield Optimization"
+---
+
+## Dormancy Classification
+
+To standardize treatment protocols, the Nursery utilizes the **Nikolaeva-Baskin Classification System**. Unlike descriptive systems, this approach targets the specific mechanism preventing germination.
+
+| Code | Type | Mechanism |
+| :--- | :--- | :--- |
+| **ND** | No Dormancy | Embryo is mature and ready to germinate. |
+| **PY** | Physical | Water-impermeable coat prevents uptake. |
+| **PD** | Physiological | Internal chemical factors inhibit germination. |
+| **MD** | Morphological | Embryo is underdeveloped at dispersal. |
+| **MPD** | Morphophysiological | Combination of underdeveloped embryo and physiological inhibition. |
+
+---
+
+## Seed Coat Treatments (PY)
+
+Treatments targeting **Physical Dormancy (PY)** involve modifying the seed coat to allow water and oxygen penetration.
+
+### Mechanical Scarification
+Physically damaging the seed coat.
+
+* **Sandpaper Abrasion:** Effective for seeds large enough to hold. *Note: Change sandpaper regularly as debris accumulates.*
+* **Nicking:** Using a scalpel to breach the coat. *Target:* Water gaps (natural weak points). *Common Usage:* Large legumes like *Lupinus*.
+* **Tumblers:** For large batches, industrial rock tumblers with coarse grit are used (See species profiles for duration).
+
+### Chemical Scarification
+Using corrosive agents to etch the coat.
+
+::: {.callout-danger}
+## Safety First
+**Sulfuric Acid ($H_2SO_4$):** The primary chemical scarification agent at the Nursery due to efficiency. Used for *Arctostaphylos*. Requires strict safety protocols.
+:::
+
+* **Hydrogen Peroxide ($H_2O_2$):** Soaking in dilute solution. May also break down inhibitors affecting PD.
+* **Ethanol:** Historic usage for surface disinfection and inhibitor breakdown.
+
+### Heat Treatments
+Mimicking wildfire conditions or thermal shock.
+
+* **Heat Shock:** Exposure to 80-100°C water. *Nursery Protocol:* Beaker of boiling water with constant stirring (e.g., *Ceanothus*).
+* **Hot Water Soak:** Immersion in 70-90°C water, then allowed to cool.
+* **Plasma Treatment:** A research-grade technique using plasma streams to 'pit' the seed coat and surface sterilize. (See Project Scope).
+
+---
+
+## Physiological Treatments (PD/MPD)
+
+Treatments addressing internal chemical dormancy or embryo development.
+
+### Hydropriming
+Controlled hydration to activate metabolic processes without full germination.
+
+1.  **Cold Water Soak:** 10-15°C for >12 hours. Softens coats and hydrates.
+2.  **Warm Water Soak:** 25-40°C. Promotes absorption in species requiring moderate heat.
+3.  **Constant Water Drip:** Continuous supply to wash away surface inhibitors.
+
+### Growth Regulators
+Hormonal applications to stimulate embryo growth.
+
+* **Smoke Primer:** Infused water containing karrikins. *Target:* Fire-adapted species (California chaparral, Mediterranean).
+* **Gibberellic Acid ($GA_3$):** Stimulates embryo growth for deep dormancy. *Warning:* Monitor concentration to avoid adverse seedling effects.
+* **Potassium Nitrate ($KNO_3$):** 0.2-0.3% soak. Stimulates metabolic activity.
+
+### Osmotic Priming
+*Research Application:* Soaking in low water potential solutions (PEG or Salts) to simulate drought/stress.
+* *Note:* Rarely used at the Nursery due to limited need for PEG6000 applications.
+
+---
+
+## Environmental Stratification
+
+Simulating seasonal cycles to break complex dormancy.
+
+::: {.callout-note}
+## Nursery Locations
+* **Cold Stratification (1-5°C):** Production House (winter) or Header House Refrigerator.
+* **Warm Stratification (15-25°C):** Heat bench in **7A** (Feb–June) or Production House Seed Table (June–Oct).
+* **Alternating Temps:** Production House North Cold Frames (bottom heat cycled on/off).
+:::
+
+---
+
+## Seedling Support & Ecology
+
+treatments applied at sowing or post-germination to ensure establishment.
+
+### Inoculants
+* **Mycorrhizal:** Fungi introduced to enhance nutrient uptake (Phosphorus). Crucial for *Ericaceae*.
+* **Bacterial:** *Rhizobium* introduction for nitrogen-fixing legumes.
+
+### Ecological Interactions
+* **Hemiparasite Co-cultivation:** Simultaneous germination of *Castilleja* spp. with native hosts to form haustorial connections.
+* **Allelopathy Mitigation:** Using activated charcoal or single-cell sowing to prevent infraspecific chemical warfare (e.g., *Arctostaphylos*).

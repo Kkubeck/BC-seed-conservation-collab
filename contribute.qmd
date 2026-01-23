@@ -1,0 +1,18 @@
+---
+title: "Student Research Portal"
+subtitle: "Help build the BC Native Seed Database"
+---
+
+Welcome HTP and Hort students! This project relies on your research to document the propagation protocols for British Columbia's diverse flora.
+
+## Instructions
+1.  **Check the Board:** Look at the "Live Claim Board" below. Find a species that is listed as **"available"** (Green).
+2.  **Claim It:** Type your name in the `student-name` column and change the status to **"claimed"** (Red).
+3.  **Research:** Download the template and complete the protocol using library resources and nursery records.
+4.  **Submit:** Upload your completed Word document via the submission link.
+
+## 1. Live Claim Board
+*Type directly in the sheet below to claim a species.*
+
+```{=html}
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS2fs51wMAUeJkq5pwhlP8gPD5tIz8ySX7DWJkVt83TAv_9FHNccNb2o4-eaVxRo_HBgoyTKgevlI12/pubhtml?widget=true&amp;headers=false" width="100%" height="800px"></iframe>

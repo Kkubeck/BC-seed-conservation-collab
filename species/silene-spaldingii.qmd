@@ -1,0 +1,24 @@
+---
+title: "Silene spaldingii"
+subtitle: "Spalding's Campion"
+---
+
+[cite_start]**Family:** Caryophyllacea [cite: 97]
+[cite_start]**Conservation Status:** G2G3, Red Listed, Endangered [cite: 103]
+
+## Biological Challenges
+1.  [cite_start]**Low Viability:** Most work points towards obligate outcrossing as the source of poor seed set[cite: 107].
+2.  [cite_start]**Deep Dormancy:** Natural dormancy recorded to last up to 6 years (commonly 1–2 years)[cite: 110]. [cite_start]This is likely an evolutionary adaptation to stochastic environments[cite: 111].
+3.  [cite_start]**Propagation Barrier:** This multi-year dormancy limits the annual quantity of plants available for restoration and slows the turnover required to monitor *ex situ* genetic fidelity[cite: 112].
+
+## Propagation Protocol
+* [cite_start]**Nursery Code:** PD, 120d cs [cite: 105]
+* [cite_start]**Dormancy Type:** Deep physiological dormancy[cite: 111].
+* [cite_start]**Chemical Treatment:** Non-deep physiological dormancy is a good candidate for $GA_3$ (Gibberellic acid) treatment to increase germination[cite: 108].
+* [cite_start]**Cycling:** Rigorous, standardized cycling is necessary to establish continuous stock production[cite: 113].
+
+## Genetic Management
+* [cite_start]**Bagging:** Directed self-crossing to try and increase seed set[cite: 109].
+* [cite_start]**Manual Pollination:** Controlled outcrossing via direct manual pollinating to rescue inbred populations[cite: 109].
+
+> [cite_start]**Research Venue:** $GA_3$ applications; vegetative cloning for in-breeding recovery transplants[cite: 114].

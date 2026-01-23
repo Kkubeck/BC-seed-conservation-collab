@@ -1,0 +1,23 @@
+---
+title: "Castilleja victoriae"
+subtitle: "Victoria's Owl-clover"
+---
+
+**Family:** Orobanchaceae
+**Conservation Status:** G1, Red Listed, Endangered
+
+## Biological Context
+* **Type:** Hemiparasite (Facultative parasite).
+* **Growth:** Can survive independently but exhibits enhanced growth and reproduction when forming haustorial connections with a host plant.
+
+## Propagation Challenges
+* **Host Identity:** The exact native host is explicitly unknown.
+* **Hydrology:** The host must tolerate the extreme seasonal hydrological cycle of vernal pools (winter saturation, summer drought).
+
+## Propagation Protocol
+* **Nursery Code:** PD
+* **Strategy:** **Polyculture approach** recommended rather than reliance on a single host.
+* **Co-Cultivation:** Success requires simultaneous germination and co-development of the parasite and host.
+* **Transplanting:** Prick-out *with* the host.
+
+> **Research Venue:** Immediate initiation of **Host Identification Trials**. Focus on native GOE species found in vernal seeps, such as *Festuca rubra* (Red Fescue), native *Trifolium* species, and non-competitive native annuals.

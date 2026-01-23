@@ -1,0 +1,36 @@
+---
+title: "Arctostaphylos uva-ursi"
+subtitle: "Common Bearberry"
+---
+
+[cite_start]**Family:** Ericaceae [cite: 21]
+[cite_start]**Conservation Status:** G5 (Secure) [cite: 27]
+
+## Seed Morphology
+* [cite_start]**Fruit Type:** Drupe containing multiple nutlets[cite: 23, 25].
+* [cite_start]**Dormancy:** Physical (impermeable nutlet) + Physiological (embryo dormancy)[cite: 28, 32].
+* [cite_start]**Inhibitors:** The fruit pulp contains germination inhibitors; thorough cleaning is essential[cite: 28, 35].
+
+## Propagation Protocol
+
+### 1. Fruit Processing
+* [cite_start]**Cleaning:** Fruit cleaning is essential to remove inhibitors[cite: 35].
+* [cite_start]**Fermentation:** Recent work suggests fermenting the fruit helps completely denature germination inhibitors, superior to straight mechanical cleaning[cite: 36].
+
+### 2. Scarification
+* **Method:** Chemical scarification on the mixture of single-seed and coalesced nutlets.
+* **Reagent:** Concentrated Sulphuric Acid ($H_2SO_4$).
+* [cite_start]**Duration:** 30 minutes to 2 hours[cite: 37].
+* [cite_start]**Post-Treatment:** Rapid termination and neutralizing using a base (potassium bicarbonate), followed by a 24-hour water soak[cite: 38].
+
+### 3. Stratification
+[cite_start]Embryos require a "warm-moist" period followed by a "cold-moist" period[cite: 32].
+1.  [cite_start]**Warm Stratification:** 60 days[cite: 39].
+2.  [cite_start]**Cold Stratification:** 90 days[cite: 39].
+
+## Production Notes
+* [cite_start]**Nursery Code:** PY, PD[cite: 33].
+* [cite_start]**Container:** Use tall cells (conetainers) to avoid transplanting small plants[cite: 42].
+* [cite_start]**Timeline:** ~1.5 years from germination to production size[cite: 42].
+
+> [cite_start]**Research Venue:** Investigate sulphuric acid alternatives (enzymatic, biological) and the use of activated charcoal in media or single-cell sowing to test for allelopathy[cite: 43].
