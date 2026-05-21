@@ -1,0 +1,214 @@
+MAP_LABEL,BGC_LABEL,ZONE,ZONE_NAME,SUBZONE,SUBZONE_NAME,VARIANT,VARIANT_NAME,PHASE,PHASE_NAME,NATURAL_DISTURBANCE,NATURAL_DISTURBANCE_NAME
+BAFAun,BAFAun,BAFA,Boreal Altai Fescue Alpine,un,Undifferentiated,,,,,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+BAFAunp,BAFAunp,BAFA,Boreal Altai Fescue Alpine,unp,Undifferentiated and Parkland,,,,,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+BGxh1,BG  xh 1,BG,Bunchgrass,xh,Very Dry Hot,1,Okanagan,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+BGxh2,BG  xh 2,BG,Bunchgrass,xh,Very Dry Hot,2,Thompson,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+BGxh3,BG  xh 3,BG,Bunchgrass,xh,Very Dry Hot,3,Fraser,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+BGxw1,BG  xw 1,BG,Bunchgrass,xw,Very Dry Warm,1,Nicola,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+BGxw2,BG  xw 2,BG,Bunchgrass,xw,Very Dry Warm,2,Alkali,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+BWBSdk,BWBSdk,BWBS,Boreal White and Black Spruce,dk,Dry Cool,,,,,NDT3,Ecosystems with frequent stand-initiating events
+BWBSmk,BWBSmk,BWBS,Boreal White and Black Spruce,mk,Moist Cool,,,,,NDT3,Ecosystems with frequent stand-initiating events
+BWBSmw,BWBSmw,BWBS,Boreal White and Black Spruce,mw,Moist Warm,,,,,NDT3,Ecosystems with frequent stand-initiating events
+BWBSvk,BWBSvk,BWBS,Boreal White and Black Spruce,vk,Very Wet Cool,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+BWBSwk1,BWBSwk 1,BWBS,Boreal White and Black Spruce,wk,Wet Cool,1,Murray,, ,NDT3,Ecosystems with frequent stand-initiating events
+BWBSwk2,BWBSwk 2,BWBS,Boreal White and Black Spruce,wk,Wet Cool,2,Graham,, ,NDT3,Ecosystems with frequent stand-initiating events
+BWBSwk3,BWBSwk 3,BWBS,Boreal White and Black Spruce,wk,Wet Cool,3,Kledo,, ,NDT3,Ecosystems with frequent stand-initiating events
+CDFmm,CDF mm,CDF,Coastal Douglas-fir,mm,Moist Maritime,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+CMAun,CMA un,CMA,Coastal Mountain-heather Alpine,un,Undifferentiated,,,,,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+CMAunp,CMA unp,CMA,Coastal Mountain-heather Alpine,unp,Undifferentiated and Parkland,,,,,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+CMAwh,CMA wh,CMA,Coastal Mountain-heather Alpine,wh,Wet Hypermaritime,,,,,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+CWHdm,CWH dm,CWH,Coastal Western Hemlock,dm,Dry Maritime,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+CWHds1,CWH ds 1,CWH,Coastal Western Hemlock,ds,Dry Submaritime,1,Southern,, ,NDT2,Ecosystems with infrequent stand-initiating events
+CWHds2,CWH ds 2,CWH,Coastal Western Hemlock,ds,Dry Submaritime,2,Central,, ,NDT2,Ecosystems with infrequent stand-initiating events
+CWHmm1,CWH mm 1,CWH,Coastal Western Hemlock,mm,Moist Maritime,1,Submontane,, ,NDT2,Ecosystems with infrequent stand-initiating events
+CWHmm2,CWH mm 2,CWH,Coastal Western Hemlock,mm,Moist Maritime,2,Montane,, ,NDT2,Ecosystems with infrequent stand-initiating events
+CWHms1,CWH ms 1,CWH,Coastal Western Hemlock,ms,Moist Submaritime,1,Southern,, ,NDT2,Ecosystems with infrequent stand-initiating events
+CWHms2,CWH ms 2,CWH,Coastal Western Hemlock,ms,Moist Submaritime,2,Central,, ,NDT2,Ecosystems with infrequent stand-initiating events
+CWHvh1,CWH vh 1,CWH,Coastal Western Hemlock,vh,Very Wet Hypermaritime,1,Southern,, ,NDT1,Ecosystems with rare stand-initiating events
+CWHvh2,CWH vh 2,CWH,Coastal Western Hemlock,vh,Very Wet Hypermaritime,2,Central,, ,NDT1,Ecosystems with rare stand-initiating events
+CWHvh3,CWH vh 3,CWH,Coastal Western Hemlock,vh,Very Wet Hypermaritime,3,Haida Gwaii,,,NDT1,Ecosystems with rare stand-initiating events
+CWHvm1,CWH vm 1,CWH,Coastal Western Hemlock,vm,Very Wet Maritime,1,Submontane,, ,NDT1,Ecosystems with rare stand-initiating events
+CWHvm2,CWH vm 2,CWH,Coastal Western Hemlock,vm,Very Wet Maritime,2,Montane,, ,NDT1,Ecosystems with rare stand-initiating events
+CWHwh1,CWH wh 1,CWH,Coastal Western Hemlock,wh,Wet Hypermaritime,1,Submontane,, ,NDT1,Ecosystems with rare stand-initiating events
+CWHwh2,CWH wh 2,CWH,Coastal Western Hemlock,wh,Wet Hypermaritime,2,Montane,, ,NDT1,Ecosystems with rare stand-initiating events
+CWHwm,CWH wm,CWH,Coastal Western Hemlock,wm,Wet Maritime,, ,, ,NDT1,Ecosystems with rare stand-initiating events
+CWHws1,CWH ws 1,CWH,Coastal Western Hemlock,ws,Wet Submaritime,1,Submontane,, ,NDT2,Ecosystems with infrequent stand-initiating events
+CWHws2,CWH ws 2,CWH,Coastal Western Hemlock,ws,Wet Submaritime,2,Montane,, ,NDT2,Ecosystems with infrequent stand-initiating events
+CWHxm1,CWH xm 1,CWH,Coastal Western Hemlock,xm,Very Dry Maritime,1,Eastern,, ,NDT2,Ecosystems with infrequent stand-initiating events
+CWHxm2,CWH xm 2,CWH,Coastal Western Hemlock,xm,Very Dry Maritime,2,Western,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFdc1,ESSFdc 1,ESSF,Engelmann Spruce -- Subalpine Fir,dc,Dry Cold,1,Monashee,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFdc2,ESSFdc 2,ESSF,Engelmann Spruce -- Subalpine Fir,dc,Dry Cold,2,Cascade,, ,NDT3,Ecosystems with frequent stand-initiating events
+ESSFdc3,ESSFdc 3,ESSF,Engelmann Spruce -- Subalpine Fir,dc,Dry Cold,3,North Thompson,,,NDT3,Ecosystems with frequent stand-initiating events
+ESSFdcp,ESSFdcp,ESSF,Engelmann Spruce -- Subalpine Fir,dcp,Dry Cold Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFdcw,ESSFdcw,ESSF,Engelmann Spruce -- Subalpine Fir,dcw,Dry Cold Woodland,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFdh1,ESSFdh 1,ESSF,Engelmann Spruce -- Subalpine Fir,dh,Dry Hot,1,Cascade,,,NDT3,Ecosystems with frequent stand-initiating events
+ESSFdh2,ESSFdh 2,ESSF,Engelmann Spruce -- Subalpine Fir,dh,Dry Hot,2,Stein,,,NDT3,Ecosystems with frequent stand-initiating events
+ESSFdk1,ESSFdk 1,ESSF,Engelmann Spruce -- Subalpine Fir,dk,Dry Cool,1,Elk,, ,NDT3,Ecosystems with frequent stand-initiating events
+ESSFdk2,ESSFdk 2,ESSF,Engelmann Spruce -- Subalpine Fir,dk,Dry Cool,2,Columbia,, ,NDT3,Ecosystems with frequent stand-initiating events
+ESSFdkp,ESSFdkp,ESSF,Engelmann Spruce -- Subalpine Fir,dkp,Dry Cool Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFdkw,ESSFdkw,ESSF,Engelmann Spruce -- Subalpine Fir,dkw,Dry Cool Woodland,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+ESSFdv1,ESSFdv 1,ESSF,Engelmann Spruce -- Subalpine Fir,dv,Dry Very Cold,1,Cayoosh,,,NDT3,Ecosystems with frequent stand-initiating events
+ESSFdv2,ESSFdv 2,ESSF,Engelmann Spruce -- Subalpine Fir,dv,Dry Very Cold,2,Tyaughton,,,NDT3,Ecosystems with frequent stand-initiating events
+ESSFdvp,ESSFdvp,ESSF,Engelmann Spruce -- Subalpine Fir,dvp,Dry Very Cold Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFdvw,ESSFdvw,ESSF,Engelmann Spruce -- Subalpine Fir,dvw,Dry Very Cold Woodland,,,,,NDT3,Ecosystems with frequent stand-initiating events
+ESSFmc,ESSFmc,ESSF,Engelmann Spruce -- Subalpine Fir,mc,Moist Cold,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmcp,ESSFmcp,ESSF,Engelmann Spruce -- Subalpine Fir,mcp,Moist Cold Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFmcw,ESSFmcw,ESSF,Engelmann Spruce -- Subalpine Fir,mcw,Moist Cold Woodland,,,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmh,ESSFmh,ESSF,Engelmann Spruce -- Subalpine Fir,mh,Moist Hot,,,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmk,ESSFmk,ESSF,Engelmann Spruce -- Subalpine Fir,mk,Moist Cool,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmkp,ESSFmkp,ESSF,Engelmann Spruce -- Subalpine Fir,mkp,Moist Cool Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFmkw,ESSFmkw,ESSF,Engelmann Spruce -- Subalpine Fir,mkw,Moist Cool Woodland,,,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmm1,ESSFmm 1,ESSF,Engelmann Spruce -- Subalpine Fir,mm,Moist Mild,1,Raush,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmm2,ESSFmm 2,ESSF,Engelmann Spruce -- Subalpine Fir,mm,Moist Mild,2,Robson,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmm3,ESSFmm 3,ESSF,Engelmann Spruce -- Subalpine Fir,mm,Moist Mild,3,Spillimacheen,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmmp,ESSFmmp,ESSF,Engelmann Spruce -- Subalpine Fir,mmp,Moist Mild Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFmmw,ESSFmmw,ESSF,Engelmann Spruce -- Subalpine Fir,mmw,Moist Mild Woodland,,,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmv1,ESSFmv 1,ESSF,Engelmann Spruce -- Subalpine Fir,mv,Moist Very Cold,1,Nechako,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmv2,ESSFmv 2,ESSF,Engelmann Spruce -- Subalpine Fir,mv,Moist Very Cold,2,Bullmoose,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmv3,ESSFmv 3,ESSF,Engelmann Spruce -- Subalpine Fir,mv,Moist Very Cold,3,Omineca,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmv4,ESSFmv 4,ESSF,Engelmann Spruce -- Subalpine Fir,mv,Moist Very Cold,4,Graham,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmvp,ESSFmvp,ESSF,Engelmann Spruce -- Subalpine Fir,mvp,Moist Very Cold Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFmw,ESSFmw,ESSF,Engelmann Spruce -- Subalpine Fir,mw,Moist Warm,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmw1,ESSFmw 1,ESSF,Engelmann Spruce -- Subalpine Fir,mw,Moist Warm,1,Cascade,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmw2,ESSFmw 2,ESSF,Engelmann Spruce -- Subalpine Fir,mw,Moist Warm,2,Stein,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFmwp,ESSFmwp,ESSF,Engelmann Spruce -- Subalpine Fir,mwp,Moist Warm Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFmww,ESSFmww,ESSF,Engelmann Spruce -- Subalpine Fir,mww,Moist Warm Woodland,,,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFun,ESSFun,ESSF,Engelmann Spruce -- Subalpine Fir,un,Undifferentiated,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+ESSFunp,ESSFunp,ESSF,Engelmann Spruce -- Subalpine Fir,unp,Undifferentiated parkland,,,,,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFvc,ESSFvc,ESSF,Engelmann Spruce -- Subalpine Fir,vc,Very Wet Cold,, ,, ,NDT1,Ecosystems with rare stand-initiating events
+ESSFvcp,ESSFvcp,ESSF,Engelmann Spruce -- Subalpine Fir,vcp,Very Wet Cold Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFvcw,ESSFvcw,ESSF,Engelmann Spruce -- Subalpine Fir,vcw,Very Wet Cold Woodland,,,,,NDT1,Ecosystems with rare stand-initiating events
+ESSFwc2,ESSFwc 2,ESSF,Engelmann Spruce -- Subalpine Fir,wc,Wet Cold,2,Monashee,, ,NDT1,Ecosystems with rare stand-initiating events
+ESSFwc3,ESSFwc 3,ESSF,Engelmann Spruce -- Subalpine Fir,wc,Wet Cold,3,Cariboo,, ,NDT1,Ecosystems with rare stand-initiating events
+ESSFwc4,ESSFwc 4,ESSF,Engelmann Spruce -- Subalpine Fir,wc,Wet Cold,4,Selkirk,, ,NDT1,Ecosystems with rare stand-initiating events
+ESSFwcp,ESSFwcp,ESSF,Engelmann Spruce -- Subalpine Fir,wcp,Wet Cold Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFwcw,ESSFwcw,ESSF,Engelmann Spruce -- Subalpine Fir,wcw,Wet Cold Woodland,, ,, ,NDT1,Ecosystems with rare stand-initiating events
+ESSFwh1,ESSFwh 1,ESSF,Engelmann Spruce -- Subalpine Fir,wh,Wet Hot,1,Columbia,,,NDT1,Ecosystems with rare stand-initiating events
+ESSFwh2,ESSFwh 2,ESSF,Engelmann Spruce -- Subalpine Fir,wh,Wet Hot,2,St Mary,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFwh3,ESSFwh 3,ESSF,Engelmann Spruce -- Subalpine Fir,wh,Wet Hot,3,Salmo,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFwk1,ESSFwk 1,ESSF,Engelmann Spruce -- Subalpine Fir,wk,Wet Cool,1,Cariboo,, ,NDT1,Ecosystems with rare stand-initiating events
+ESSFwk2,ESSFwk 2,ESSF,Engelmann Spruce -- Subalpine Fir,wk,Wet Cool,2,Misinchinka,, ,NDT1,Ecosystems with rare stand-initiating events
+ESSFwm1,ESSFwm 1,ESSF,Engelmann Spruce -- Subalpine Fir,wm,Wet Mild,1,Fernie,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFwm2,ESSFwm 2,ESSF,Engelmann Spruce -- Subalpine Fir,wm,Wet Mild,2,Purcell,,,NDT1,Ecosystems with rare stand-initiating events
+ESSFwm3,ESSFwm 3,ESSF,Engelmann Spruce -- Subalpine Fir,wm,Wet Mild,3,Ymir,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFwm4,ESSFwm 4,ESSF,Engelmann Spruce -- Subalpine Fir,wm,Wet Mild,4,Moyie,,,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFwmp,ESSFwmp,ESSF,Engelmann Spruce -- Subalpine Fir,wmp,Wet Mild Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFwmw,ESSFwmw,ESSF,Engelmann Spruce -- Subalpine Fir,wmw,Wet Mild Woodland,, ,, ,NDT1,Ecosystems with rare stand-initiating events
+ESSFwv,ESSFwv,ESSF,Engelmann Spruce -- Subalpine Fir,wv,Wet Very Cold,, ,, ,NDT1,Ecosystems with rare stand-initiating events
+ESSFwvp,ESSFwvp,ESSF,Engelmann Spruce -- Subalpine Fir,wvp,Wet Very Cold Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFwvw,ESSFwvw,ESSF,Engelmann Spruce -- Subalpine Fir,wvw,Wet Very Cold Woodland,,,,,NDT1,Ecosystems with rare stand-initiating events
+ESSFxc1,ESSFxc 1,ESSF,Engelmann Spruce -- Subalpine Fir,xc,Very Dry Cold,1,Similkameen,,,NDT3,Ecosystems with frequent stand-initiating events
+ESSFxc2,ESSFxc 2,ESSF,Engelmann Spruce -- Subalpine Fir,xc,Very Dry Cold,2,Thompson,,,NDT3,Ecosystems with frequent stand-initiating events
+ESSFxc3,ESSFxc 3,ESSF,Engelmann Spruce -- Subalpine Fir,xc,Very Dry Cold,3,Pavillion,,,NDT3,Ecosystems with frequent stand-initiating events
+ESSFxcp,ESSFxcp,ESSF,Engelmann Spruce -- Subalpine Fir,xcp,Very Dry Cold Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFxcw,ESSFxcw,ESSF,Engelmann Spruce -- Subalpine Fir,xcw,Very Dry Cold Woodland,,,,,NDT3,Ecosystems with frequent stand-initiating events
+ESSFxv1,ESSFxv 1,ESSF,Engelmann Spruce -- Subalpine Fir,xv,Very Dry Very Cold,1,West Chilcotin,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFxv2,ESSFxv 2,ESSF,Engelmann Spruce -- Subalpine Fir,xv,Very Dry Very Cold,2,Big Creek,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ESSFxvp,ESSFxvp,ESSF,Engelmann Spruce -- Subalpine Fir,xvp,Very Dry Very Cold Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+ESSFxvw,ESSFxvw,ESSF,Engelmann Spruce -- Subalpine Fir,xvw,Very Dry Very Cold Woodland,,,,,NDT2,Ecosystems with infrequent stand-initiating events
+ICHdk,ICH dk,ICH,Interior Cedar -- Hemlock,dk,Dry Cool,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+ICHdm,ICH dm,ICH,Interior Cedar -- Hemlock,dm,Dry Mild,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+ICHdw1,ICH dw 1,ICH,Interior Cedar -- Hemlock,dw,Dry Warm,1,West Kootenay,, ,NDT3,Ecosystems with frequent stand-initiating events
+ICHdw3,ICH dw 3,ICH,Interior Cedar -- Hemlock,dw,Dry Warm,3,North Thompson,,,NDT3,Ecosystems with frequent stand-initiating events
+ICHdw4,ICH dw 4,ICH,Interior Cedar -- Hemlock,dw,Dry Warm,4,Shuswap,,,NDT3,Ecosystems with frequent stand-initiating events
+ICHmc1,ICH mc 1,ICH,Interior Cedar -- Hemlock,mc,Moist Cold,1,Nass,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ICHmc1a,ICH mc 1a,ICH,Interior Cedar -- Hemlock,mc,Moist Cold,1,Nass,a,Amabilis fir,NDT2,Ecosystems with infrequent stand-initiating events
+ICHmc2,ICH mc 2,ICH,Interior Cedar -- Hemlock,mc,Moist Cold,2,Hazelton,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ICHmk1,ICH mk 1,ICH,Interior Cedar -- Hemlock,mk,Moist Cool,1,Okanagan,, ,NDT3,Ecosystems with frequent stand-initiating events
+ICHmk2,ICH mk 2,ICH,Interior Cedar -- Hemlock,mk,Moist Cool,2,Thompson,, ,NDT3,Ecosystems with frequent stand-initiating events
+ICHmk3,ICH mk 3,ICH,Interior Cedar -- Hemlock,mk,Moist Cool,3,Horsefly,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ICHmk4,ICH mk 4,ICH,Interior Cedar -- Hemlock,mk,Moist Cool,4,Elk,,,NDT3,Ecosystems with frequent stand-initiating events
+ICHmk5,ICH mk 5,ICH,Interior Cedar -- Hemlock,mk,Moist Cool,5,Kootenay,,,NDT3,Ecosystems with frequent stand-initiating events
+ICHmm,ICH mm,ICH,Interior Cedar -- Hemlock,mm,Moist Mild,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ICHmw1,ICH mw 1,ICH,Interior Cedar -- Hemlock,mw,Moist Warm,1,Kinbasket,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ICHmw2,ICH mw 2,ICH,Interior Cedar -- Hemlock,mw,Moist Warm,2,Slocan,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ICHmw3,ICH mw 3,ICH,Interior Cedar -- Hemlock,mw,Moist Warm,3,Thompson,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ICHmw4,ICH mw 4,ICH,Interior Cedar -- Hemlock,mw,Moist Warm,4,Ymir,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ICHmw5,ICH mw 5,ICH,Interior Cedar -- Hemlock,mw,Moist Warm,5,Granby,,,NDT2,Ecosystems with infrequent stand-initiating events
+ICHvc,ICH vc,ICH,Interior Cedar -- Hemlock,vc,Very Wet Cold,, ,, ,NDT1,Ecosystems with rare stand-initiating events
+ICHvk1,ICH vk 1,ICH,Interior Cedar -- Hemlock,vk,Very Wet Cool,1,Columbia,, ,NDT1,Ecosystems with rare stand-initiating events
+ICHvk2,ICH vk 2,ICH,Interior Cedar -- Hemlock,vk,Very Wet Cool,2,Slim,, ,NDT1,Ecosystems with rare stand-initiating events
+ICHwc,ICH wc,ICH,Interior Cedar -- Hemlock,wc,Wet Cold,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+ICHwk1,ICH wk 1,ICH,Interior Cedar -- Hemlock,wk,Wet Cool,1,Shuswap,, ,NDT1,Ecosystems with rare stand-initiating events
+ICHwk2,ICH wk 2,ICH,Interior Cedar -- Hemlock,wk,Wet Cool,2,Quesnel,, ,NDT1,Ecosystems with rare stand-initiating events
+ICHwk3,ICH wk 3,ICH,Interior Cedar -- Hemlock,wk,Wet Cool,3,Goat,, ,NDT1,Ecosystems with rare stand-initiating events
+ICHwk4,ICH wk 4,ICH,Interior Cedar -- Hemlock,wk,Wet Cool,4,Cariboo,, ,NDT1,Ecosystems with rare stand-initiating events
+ICHxm1,ICH xm 1,ICH,Interior Cedar -- Hemlock,xm,Very Dry Mild,1,Shuswap,,,NDT4,Ecosystems with frequent stand-maintaining fires
+ICHxw,ICH xw,ICH,Interior Cedar -- Hemlock,xw,Very Dry Warm,, ,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+ICHxwa,ICH xw  a,ICH,Interior Cedar -- Hemlock,xw,Very Dry Warm,,,a,Warm,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFdc,IDF dc,IDF,Interior Douglas-fir,dc,Dry Cold,,,,,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFdh,IDF dh,IDF,Interior Douglas-fir,dh,Dry Hot,,,,,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFdk1,IDF dk 1,IDF,Interior Douglas-fir,dk,Dry Cool,1,Thompson,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFdk2,IDF dk 2,IDF,Interior Douglas-fir,dk,Dry Cool,2,Cascade,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFdk3,IDF dk 3,IDF,Interior Douglas-fir,dk,Dry Cool,3,Fraser,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFdk4,IDF dk 4,IDF,Interior Douglas-fir,dk,Dry Cool,4,Chilcotin,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFdk5,IDF dk 5,IDF,Interior Douglas-fir,dk,Dry Cool,5,Columbia,,,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFdm1,IDF dm 1,IDF,Interior Douglas-fir,dm,Dry Mild,1,Kettle,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFdm2,IDF dm 2,IDF,Interior Douglas-fir,dm,Dry Mild,2,Kootenay,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFdw,IDF dw,IDF,Interior Douglas-fir,dw,Dry Warm,, ,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFmw2,IDF mw 2,IDF,Interior Douglas-fir,mw,Moist Warm,2,Thompson,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFww,IDF ww,IDF,Interior Douglas-fir,ww,Wet Warm,, ,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFww1,IDF ww 1,IDF,Interior Douglas-fir,ww,Wet Warm,1,Stein,,,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFxc,IDF xc,IDF,Interior Douglas-fir,xc,Very Dry Cold,,,,,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFxh1,IDF xh 1,IDF,Interior Douglas-fir,xh,Very Dry Hot,1,Okanagan,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFxh2,IDF xh 2,IDF,Interior Douglas-fir,xh,Very Dry Hot,2,Thompson,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFxk,IDF xk,IDF,Interior Douglas-fir,xk,Very Dry Cool,, ,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFxm,IDF xm,IDF,Interior Douglas-fir,xm,Very Dry Mild,, ,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFxw,IDF xw,IDF,Interior Douglas-fir,xw,Very Dry Warm,, ,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFxx1,IDF xx 1,IDF,Interior Douglas-fir,xx,Very Hot Very Dry,1,Kettle,,,NDT4,Ecosystems with frequent stand-maintaining fires
+IDFxx2,IDF xx 2,IDF,Interior Douglas-fir,xx,Very Dry Very Hot,2,Kootenay,,,NDT4,Ecosystems with frequent stand-maintaining fires
+IMAun,IMA un,IMA,Interior Mountain-heather Alpine,un,Undifferentiated,,,,,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+IMAunp,IMA unp,IMA,Interior Mountain-heather Alpine,unp,Undifferentiated and Parkland,,,,,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+MHmm1,MH  mm 1,MH,Mountain Hemlock,mm,Moist Maritime,1,Windward,, ,NDT1,Ecosystems with rare stand-initiating events
+MHmm2,MH  mm 2,MH,Mountain Hemlock,mm,Moist Maritime,2,Leeward,, ,NDT1,Ecosystems with rare stand-initiating events
+MHmmp,MH  mmp,MH,Mountain Hemlock,mmp,Moist Maritime Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+MHun,MH  un,MH,Mountain Hemlock,un,Undifferentiated,, ,, ,NDT1,Ecosystems with rare stand-initiating events
+MHunp,MH  unp,MH,Mountain Hemlock,unp,Undifferentiated parkland,,,,,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+MHwh,MH  wh,MH,Mountain Hemlock,wh,Wet Hypermaritime,, ,, ,NDT1,Ecosystems with rare stand-initiating events
+MHwh1,MH  wh 1,MH,Mountain Hemlock,wh,Wet Hypermaritime,1,Windward,, ,NDT1,Ecosystems with rare stand-initiating events
+MHwhp,MH  whp,MH,Mountain Hemlock,whp,Wet Hypermaritime Parkland,, ,, ,NDT5,Alpine Tundra and Subalpine Parkland ecosystems
+MSdc1,MS  dc 1,MS,Montane Spruce,dc,Dry Cold,1,Cayoosh,, ,NDT3,Ecosystems with frequent stand-initiating events
+MSdc2,MS  dc 2,MS,Montane Spruce,dc,Dry Cold,2,Tatlayoko,, ,NDT3,Ecosystems with frequent stand-initiating events
+MSdc3,MS  dc 3,MS,Montane Spruce,dc,Dry Cold,3,Tyaughton,,,NDT3,Ecosystems with frequent stand-initiating events
+MSdk,MS  dk,MS,Montane Spruce,dk,Dry Cool,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+MSdm1,MS  dm 1,MS,Montane Spruce,dm,Dry Mild,1,Okanagan,, ,NDT3,Ecosystems with frequent stand-initiating events
+MSdm2,MS  dm 2,MS,Montane Spruce,dm,Dry Mild,2,Cascade,, ,NDT3,Ecosystems with frequent stand-initiating events
+MSdm3,MS  dm 3,MS,Montane Spruce,dm,Dry Mild,3,North Thompson,,,NDT3,Ecosystems with frequent stand-initiating events
+MSdv,MS  dv,MS,Montane Spruce,dv,Dry Very Cold,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+MSdw,MS  dw,MS,Montane Spruce,dw,Dry Warm,,,,,NDT3,Ecosystems with frequent stand-initiating events
+MSxk1,MS  xk 1,MS,Montane Spruce,xk,Very Dry Cool,1,Similkameen,,,NDT3,Ecosystems with frequent stand-initiating events
+MSxk2,MS  xk 2,MS,Montane Spruce,xk,Very Dry Cool,2,South Thompson,,,NDT3,Ecosystems with frequent stand-initiating events
+MSxk3,MS  xk 3,MS,Montane Spruce,xk,Very Dry Cool,3,Pavillion,,,NDT3,Ecosystems with frequent stand-initiating events
+MSxv,MS  xv,MS,Montane Spruce,xv,Very Dry Very Cold,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+PPxh1,PP  xh 1,PP,Ponderosa Pine,xh,Very Dry Hot,1,Okanagan,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+PPxh2,PP  xh 2,PP,Ponderosa Pine,xh,Very Dry Hot,2,Thompson,, ,NDT4,Ecosystems with frequent stand-maintaining fires
+SBPSdc,SBPSdc,SBPS,Sub-Boreal Pine -- Spruce,dc,Dry Cold,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBPSmc,SBPSmc,SBPS,Sub-Boreal Pine -- Spruce,mc,Moist Cold,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBPSmk,SBPSmk,SBPS,Sub-Boreal Pine -- Spruce,mk,Moist Cool,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBPSxc,SBPSxc,SBPS,Sub-Boreal Pine -- Spruce,xc,Very Dry Cold,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSdh1,SBS dh 1,SBS,Sub-Boreal Spruce,dh,Dry Hot,1,McLennan,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSdh2,SBS dh 2,SBS,Sub-Boreal Spruce,dh,Dry Hot,2,Robson,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSdk,SBS dk,SBS,Sub-Boreal Spruce,dk,Dry Cool,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSdw1,SBS dw 1,SBS,Sub-Boreal Spruce,dw,Dry Warm,1,Horsefly,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSdw2,SBS dw 2,SBS,Sub-Boreal Spruce,dw,Dry Warm,2,Blackwater,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSdw3,SBS dw 3,SBS,Sub-Boreal Spruce,dw,Dry Warm,3,Stuart,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSmc1,SBS mc 1,SBS,Sub-Boreal Spruce,mc,Moist Cold,1,Moffat,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSmc2,SBS mc 2,SBS,Sub-Boreal Spruce,mc,Moist Cold,2,Babine,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSmc3,SBS mc 3,SBS,Sub-Boreal Spruce,mc,Moist Cold,3,Kluskus,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSmh,SBS mh,SBS,Sub-Boreal Spruce,mh,Moist Hot,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSmk1,SBS mk 1,SBS,Sub-Boreal Spruce,mk,Moist Cool,1,Mossvale,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSmk2,SBS mk 2,SBS,Sub-Boreal Spruce,mk,Moist Cool,2,Williston,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSmm,SBS mm,SBS,Sub-Boreal Spruce,mm,Moist Mild,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSmw,SBS mw,SBS,Sub-Boreal Spruce,mw,Moist Warm,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSun,SBS un,SBS,Sub-Boreal Spruce,un,Undifferentiated,, ,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSvk,SBS vk,SBS,Sub-Boreal Spruce,vk,Very Wet Cool,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+SBSwk1,SBS wk 1,SBS,Sub-Boreal Spruce,wk,Wet Cool,1,Willow,, ,NDT2,Ecosystems with infrequent stand-initiating events
+SBSwk2,SBS wk 2,SBS,Sub-Boreal Spruce,wk,Wet Cool,2,Finlay-Peace,, ,NDT2,Ecosystems with infrequent stand-initiating events
+SBSwk3,SBS wk 3,SBS,Sub-Boreal Spruce,wk,Wet Cool,3,Takla,, ,NDT3,Ecosystems with frequent stand-initiating events
+SBSwk3a,SBS wk 3a,SBS,Sub-Boreal Spruce,wk,Wet Cool,3,Takla,a,Douglas-fir,NDT3,Ecosystems with frequent stand-initiating events
+SWBmk,SWB mk,SWB,Spruce -- Willow -- Birch,mk,Moist Cool,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+SWBmks,SWB mks,SWB,Spruce -- Willow -- Birch,mks,Moist Cool Scrub,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+SWBun,SWB un,SWB,Spruce -- Willow -- Birch,un,Undifferentiated,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+SWBuns,SWB uns,SWB,Spruce -- Willow -- Birch,uns,Undifferentiated scrub,,,,,NDT2,Ecosystems with infrequent stand-initiating events
+SWBvk,SWB vk,SWB,Spruce -- Willow -- Birch,vk,Very Wet Cool,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
+SWBvks,SWB vks,SWB,Spruce -- Willow -- Birch,vks,Very Wet Cool Scrub,, ,, ,NDT2,Ecosystems with infrequent stand-initiating events
