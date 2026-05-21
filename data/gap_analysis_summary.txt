@@ -1,0 +1,24 @@
+VASCAN Gap Analysis Summary: BC Native Vascular Plants vs UBC Collection
+========================================================================
+
+Total BC-native taxa in VASCAN: 2519
+  - Species: 1777
+  - Subspecies/Varieties: 742
+
+UBC Collection Coverage (from 935 total UBC taxa):
+  - Matches VASCAN BC-native list: 839
+  - No match in VASCAN BC-native list: 213
+
+The Gap (VASCAN BC-native taxa NOT in UBC collection): 1680
+
+Top 10 Families with largest gaps (number of missing taxa):
+  - Asteraceae: 238
+  - Cyperaceae: 166
+  - Poaceae: 149
+  - Brassicaceae: 100
+  - Fabaceae: 78
+  - Rosaceae: 70
+  - Ranunculaceae: 59
+  - Caryophyllaceae: 50
+  - Orobanchaceae: 41
+  - Juncaceae: 40
