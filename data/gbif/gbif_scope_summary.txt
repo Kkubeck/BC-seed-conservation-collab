@@ -1,0 +1,15 @@
+GBIF Scope Summary — BC Native Vascular Plants
+==================================================
+
+Total BC plant occurrences with coordinates: 1,907,393
+Master list taxa: 2519
+Master list species: 1777
+
+Coverage sample (50 random species):
+  With occurrences: 49/50 (98%)
+  Without: 1/50
+
+Sample dataset: 6000 records across 20 species
+
+Species without GBIF BC records (from sample):
+  - Senega officinalis (Polygalaceae)
