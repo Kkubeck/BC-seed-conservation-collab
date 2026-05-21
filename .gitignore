@@ -1,3 +1,44 @@
-.DS_Store
-/.quarto/
+# Raw VASCAN Darwin Core Archive (large, reproducible from download)
+data/vascan/vascan-dwca.zip
+data/vascan/taxon.txt
+data/vascan/distribution.txt
+data/vascan/vernacularname.txt
+data/vascan/resourcerelationship.txt
+data/vascan/description.txt
+data/vascan/eml.xml
+data/vascan/meta.xml
+
+# GBIF bulk downloads (when we do them)
+data/gbif/*.zip
+data/gbif/raw/
+
+# GIS shapefiles / geodatabases (if downloaded later)
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.sbn
+*.sbx
+*.gdb/
+*.gpkg
+
+# Large GeoJSON (territory polygons etc.)
+data/territories/*.geojson
+
+# Python
 __pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Quarto render output (tracked in docs/ already)
+_site/
+.quarto/
+
+# Environment
+.env
+*.env
