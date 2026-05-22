@@ -23,8 +23,9 @@ data/gbif/raw/
 *.gdb/
 *.gpkg
 
-# Large GeoJSON (territory polygons etc.)
+# Large GeoJSON (territory polygons etc.) — keep curated BC subset
 data/territories/*.geojson
+!data/territories/bc-territories.geojson
 
 # Python
 __pycache__/

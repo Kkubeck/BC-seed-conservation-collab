@@ -121,10 +121,11 @@ All external data sources used in this project, with endpoints, licensing, and s
 | **Auth** | ⚠️ **API key required** (free) — sign up at https://native-land.ca/auth/signup |
 | **Alternative** | ArcGIS hosted layer: https://www.arcgis.com/home/item.html?id=41c4b3b2e139439db4ae9e62ca35b2da |
 | **Licence** | CC-BY-SA (Creative Commons Attribution-ShareAlike) |
-| **Caveats** | Boundaries are NOT legal boundaries. Overlapping territories are common. Some Nations may not be represented. Always engage directly with Nations. |
-| **Status** | 🟡 API documented; **awaiting API key signup to pull BC territory data** |
-| **Local path** | `data/territories/` |
-| **TODO** | Sign up for API key, pull BC territory polygons |
+| **Caveats** | Boundaries are NOT legal boundaries. Overlapping territories are common, and many are contested. These borders did not exist cleanly before settler arrival — our bbox filter intentionally includes any territory that grazes BC so we capture the widest set of potential stakeholders. Some Nations may not be represented. Always engage directly with Nations. |
+| **Status** | ✅ Pulled 2026-05-22 — 139 territories intersecting BC bbox |
+| **Local path** | `data/territories/bc-territories.geojson` (filtered from global FeatureCollection) |
+| **Pull command** | `curl -sSL "https://native-land.ca/api/index.php?maps=territories&key=$KEY"` then filter to BC bbox (lat 48.3–60.0, lon -139.06 to -114.04) |
+| **API key** | Stored at `~/.openclaw/workspace/state/secrets/native-land-api-key` (not in repo) |
 
 ---
 
