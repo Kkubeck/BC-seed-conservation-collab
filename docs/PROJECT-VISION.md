@@ -150,9 +150,9 @@ Feed data to the BC Provincial Seed Bank. But more importantly: build a warehous
 
 ## Connection to Other Projects
 
-- **Propagation Card Reader** (`/home/hevek/projects/propagation-card-reader/`): Extracting historical protocols from 12,762 scanned cards → feeds Layer 2
-- **ben0** (`/home/hevek/projects/ben0/`): IrisBG analytical pipeline, field registry → species metadata enrichment
-- **UBC accession data** (`workspace/data/`): 36,984 accessions, 141,422 items → provenance, collection history
+- **Propagation Card Reader** (companion repo): Extracting historical protocols from 12,762 scanned cards → feeds Layer 2
+- **ben0** (companion repo): IrisBG analytical pipeline, field registry → species metadata enrichment
+- **UBC accession data**: 36,984 accessions, 141,422 items → provenance, collection history
 
 ---
 

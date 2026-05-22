@@ -181,4 +181,63 @@ All external data sources used in this project, with endpoints, licensing, and s
 
 ---
 
-*Last updated: May 20, 2026*
+## Propagation Protocols
+
+| | |
+|---|---|
+| **Top pick** | **Native Plant Network Propagation Protocol Database** |
+| **Provider** | RNGR (USDA Forest Service / University of Idaho) |
+| **URL** | https://npn.rngr.net/npn/propagation/protocol-database |
+| **Access** | Search UI only; no verified public API or bulk download |
+| **Coverage** | North America; best broad public source for native plant propagation protocols |
+| **Protocol depth** | Propagation method, stock type, collection timing, processing, pretreatment, stratification, growing phases, hardening, references |
+| **Licence** | Unknown |
+| **Status** | ✅ Verified; best first ingestion target |
+
+| | |
+|---|---|
+| **Top pick** | **Pacific Northwest Plant Propagation Protocols** |
+| **Provider** | University of Washington ESRM 412 via RNGR |
+| **URL** | https://rngr.net/resources/pacific-northwest-plant-propagation-protocols |
+| **Access** | RNGR page links to a Shiny app; no verified API |
+| **Coverage** | Pacific Northwest; very BC-relevant |
+| **Protocol depth** | Similar to NPN, with strong regional/ecotype context |
+| **Licence** | Unknown |
+| **Status** | ✅ Verified; best regional supplement |
+
+| | |
+|---|---|
+| **Top pick** | **BC Tree Seed Centre / SPAR germination guidance** |
+| **Provider** | BC Ministry of Forests |
+| **URL** | https://www2.gov.bc.ca/gov/content/industry/forestry/managing-our-forest-resources/tree-seed |
+| **Access** | Open web pages/tables; no public bulk protocol dataset confirmed |
+| **Coverage** | BC forest tree species |
+| **Protocol depth** | Soak hours, stratification days, temperatures, test days, germinator regimes, germination capacity, seeds per gram |
+| **Licence** | BC government pages; reuse needs licence check per record/page |
+| **Status** | ✅ Verified; highest-value BC-specific tree source |
+
+| | |
+|---|---|
+| **Strong backfill** | **USDA PLANTS + NRCS Plant Guides** |
+| **Provider** | USDA NRCS |
+| **URL** | https://plants.sc.egov.usda.gov/ |
+| **Access** | Plant profiles and guide PDFs; no unified protocol API |
+| **Coverage** | US and territories; many western taxa overlap BC flora |
+| **Protocol depth** | Often includes sowing depth, stratification, establishment, greenhouse handling, seeds/kg |
+| **Licence** | Plant data are free for use; image rights vary |
+| **Status** | ✅ Verified; useful secondary source |
+
+| | |
+|---|---|
+| **Trait reference** | **Kew Seed Information Database (SID)** |
+| **Provider** | Royal Botanic Gardens, Kew |
+| **URL** | https://data.kew.org/sid/ |
+| **Access** | Legacy public site; no verified public API; related MSBP warehouse is partner-restricted |
+| **Coverage** | Global seed biology and MSB-linked collections |
+| **Protocol depth** | Strong for dormancy, germination, viability, and storage traits; weaker for full nursery protocols |
+| **Licence** | Restricted/unclear |
+| **Status** | ✅ Verified; good for normalization and gap-filling, not first-pass ingestion |
+
+---
+
+*Last updated: May 21, 2026*

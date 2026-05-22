@@ -1,0 +1,39 @@
+{
+  "creator": "YOUR_GBIF_USERNAME",
+  "notificationAddresses": ["YOUR_EMAIL"],
+  "predicate": {
+    "type": "and",
+    "predicates": [
+      {
+        "type": "equals",
+        "key": "COUNTRY",
+        "value": "CA"
+      },
+      {
+        "type": "equals",
+        "key": "STATE_PROVINCE",
+        "value": "British Columbia"
+      },
+      {
+        "type": "equals",
+        "key": "TAXON_KEY",
+        "value": "7707728"
+      },
+      {
+        "type": "equals",
+        "key": "HAS_COORDINATE",
+        "value": "true"
+      },
+      {
+        "type": "equals",
+        "key": "HAS_GEOSPATIAL_ISSUE",
+        "value": "false"
+      },
+      {
+        "type": "equals",
+        "key": "OCCURRENCE_STATUS",
+        "value": "PRESENT"
+      }
+    ]
+  }
+}

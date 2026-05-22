@@ -42,3 +42,13 @@ _site/
 # Environment
 .env
 *.env
+
+# OpenClaw workspace files (leaked from agent workspace, not project files)
+.openclaw/
+AGENTS.md
+IDENTITY.md
+SOUL.md
+USER.md
+TOOLS.md
+HEARTBEAT.md
+MEMORY.md

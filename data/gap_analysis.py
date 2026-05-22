@@ -1,8 +1,8 @@
 import pandas as pd
 import os
 
-# Paths
-DATA_DIR = "/home/hevek/projects/BC-seed-conservation-collab/data"
+# Paths — resolve relative to this script so the analysis is portable
+DATA_DIR = os.path.dirname(os.path.abspath(__file__))
 TAXON_PATH = os.path.join(DATA_DIR, "vascan/taxon.txt")
 DIST_PATH = os.path.join(DATA_DIR, "vascan/distribution.txt")
 UBC_PATH = os.path.join(DATA_DIR, "database.csv")
