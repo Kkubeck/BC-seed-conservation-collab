@@ -135,18 +135,15 @@ Feed data to the BC Provincial Seed Bank. But more importantly: build a warehous
 
 ## Key Relationships
 
-- **Kevin's contact:** Has a First Nations contact who could evaluate prototype (details TBD — need working demo first)
-- **UBC Botanical Garden:** Source institution (but not the gatekeeper of this project)
-- **BC Provincial Seed Bank:** Intended data consumer and collaboration partner
+- **BC First Nations Nursery**: Testing partners and stakeholder
+- **UBC Botanical Garden:** Potential information seed source institution but not intended the gatekeeper
+- **BC Provincial Seed Bank:** Potential intended data consumer and collaboration partner
 - **HTP/Hort students:** Existing contribution model via student portal
 
 ## Political Context
 
-- First Nations relations are gatekept by institutional careerists
-- This project is being built independently using entirely public data
-- The prototype-first approach bypasses institutional permission
-- Centering Indigenous data sovereignty from architecture onward is both ethically correct and strategically powerful (UNDRIP alignment, funding eligibility)
-- "Show, don't ask" — a working tool that already respects sovereignty is a fundamentally different conversation than a proposal
+- This project is being built independently using entirely public data using a prototype-first approach
+- Centering Indigenous data sovereignty from architecture onward is ethically correct (UNDRIP alignment, funding eligibility)
 
 ## Connection to Other Projects
 
