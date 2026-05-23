@@ -685,5 +685,306 @@ def _parse_iso_date(value: Optional[str]) -> Optional[date]:
 
 
 # =============================================================================
-# Analysis functions and main(): Phase 2c — next.
+# Phase 2c — Analysis functions  (DESIGN PASS — bodies follow review)
 # =============================================================================
+# Per HtDP recipe, each function lands here first as:
+#     signature, purpose, >=1 example, template
+# Bodies + tests get written after this design pass is approved.
+#
+# Cross-cutting decisions locked 2026-05-22:
+#
+#   Geometry library
+#     shapely.  Pure-Python ray casting was rejected -- MultiPolygon plus
+#     polygon-with-holes edge cases are exactly where hand-rolled code rots
+#     silently.  shapely.geometry.shape() consumes a raw GeoJSON geometry
+#     directly, which matches our pass-through Territory.geometry shape.
+#     New dependency: `shapely>=2.0`.  To be added to requirements.txt when
+#     bodies land.
+#
+#   Coordinate-uncertainty handling  (permissive by default)
+#     We are a propagation-data discovery surface, not a precision GIS tool.
+#     A record that says "somewhere in this 5 km area" still answers the
+#     question "is species X recorded in/near territory Y?" -- which is the
+#     question the map answers.  So:
+#       - coord_uncertainty_m is None  -> include  (unknown != bad)
+#       - coord_uncertainty_m <= cap   -> include
+#       - coord_uncertainty_m  > cap   -> exclude  (known county-scale junk)
+#     Default cap raised from the plan's 1 km to 10 km for the same reason.
+#     Cap stays a build-time parameter so a future, stricter consumer can
+#     dial it down without code changes.
+#
+#   Build outputs are public-by-default at the data layer
+#     build_index() emits every TerritoryEntry with visibility="public".
+#     The sovereignty projection is a separate pass (apply_sovereignty)
+#     so the un-projected index is never a single bug away from being
+#     served -- the public artifact only exists post-projection.
+
+DEFAULT_COORD_UNCERTAINTY_CAP_M = 10_000
+
+
+# -----------------------------------------------------------------------------
+# 2c.1  point_in_territory
+# -----------------------------------------------------------------------------
+# Signature:
+#   point_in_territory(occurrence: Occurrence,
+#                      territory:  Territory,
+#                      *,
+#                      coord_uncertainty_cap_m: int
+#                          = DEFAULT_COORD_UNCERTAINTY_CAP_M) -> bool
+#
+# Purpose:
+#   True iff `occurrence` satisfies BOTH conditions:
+#     (a) the point (occurrence.lon, occurrence.lat) lies inside
+#         territory.geometry (a GeoJSON Polygon or MultiPolygon, lon/lat,
+#         WGS84), AND
+#     (b) the occurrence passes the uncertainty filter, i.e.
+#         coord_uncertainty_m is None  OR
+#         coord_uncertainty_m <= coord_uncertainty_cap_m.
+#   "Inside" follows shapely's `.contains()` semantics: points on the boundary
+#   are NOT inside.  Boundary cases are rare in real GBIF data and we prefer
+#   shapely's well-defined behaviour over re-implementing a tie-breaking rule.
+#
+# Examples:
+#   t = Territory("t", "Test", "url",
+#                 {"type": "Polygon",
+#                  "coordinates": [[[-124,49],[-122,49],[-122,50],[-124,50],[-124,49]]]},
+#                 "#000")
+#
+#   inside  = Occurrence("Pseudotsuga menziesii", lat=49.3, lon=-123.1,
+#                        year=2026, event_date=None,
+#                        basis_of_record="HUMAN_OBSERVATION",
+#                        coord_uncertainty_m=15.0, dataset_name=None)
+#   outside = replace(inside, lon=-100.0)              # far east
+#   sloppy  = replace(inside, coord_uncertainty_m=5e4) # 50 km, > 10 km cap
+#   unknown = replace(inside, coord_uncertainty_m=None)
+#
+#   point_in_territory(inside,  t) == True
+#   point_in_territory(outside, t) == False
+#   point_in_territory(sloppy,  t) == False
+#   point_in_territory(unknown, t) == True            # permissive
+#   point_in_territory(sloppy,  t, coord_uncertainty_cap_m=100_000) == True
+#
+# Template:
+#   def point_in_territory(o: Occurrence, t: Territory, *, cap):
+#       # fn_for_occurrence(o):  uses o.lon, o.lat, o.coord_uncertainty_m
+#       # t.geometry consumed atomically by shapely.geometry.shape().
+#       return ...(o.lon, o.lat, o.coord_uncertainty_m, t.geometry, cap)
+
+
+# -----------------------------------------------------------------------------
+# 2c.2  species_in_territory
+# -----------------------------------------------------------------------------
+# Signature:
+#   species_in_territory(territory:   Territory,
+#                        occurrences: List[Occurrence],
+#                        *,
+#                        coord_uncertainty_cap_m: int
+#                            = DEFAULT_COORD_UNCERTAINTY_CAP_M
+#                       ) -> List[str]
+#
+# Purpose:
+#   Return the alphabetised list of DISTINCT binomials whose occurrences
+#   qualify (per point_in_territory) for this territory.  Empty list when
+#   no occurrence qualifies.  Output is deterministic (sorted) so downstream
+#   diffing/serialisation is stable.
+#
+#   Note: this function returns species names, not counts.  Counts are
+#   produced once by build_index() to avoid a second polygon pass.  We keep
+#   this function in the public surface anyway because it is the natural
+#   unit-testable shape of the "what grows here?" question, and exercising
+#   it directly is the cheapest way to ground-truth the polygon test.
+#
+# Examples:
+#   t = <BC-ish polygon as above>
+#   occs = [
+#     Occurrence("Pseudotsuga menziesii",   lat=49.3, lon=-123.1, ...),  # in
+#     Occurrence("Arctostaphylos uva-ursi", lat=49.4, lon=-123.0, ...),  # in
+#     Occurrence("Pseudotsuga menziesii",   lat=49.5, lon=-122.9, ...),  # in, dup
+#     Occurrence("Zostera marina",          lat=20.0, lon=-100.0, ...),  # out
+#   ]
+#   species_in_territory(t, occs) ==
+#       ["Arctostaphylos uva-ursi", "Pseudotsuga menziesii"]
+#
+#   species_in_territory(t, []) == []
+#
+# Template:
+#   def species_in_territory(t, occs, *, cap):
+#       acc: Set[str] = set()                  # arbitrary-sized over occs
+#       for o in occs:
+#           if point_in_territory(o, t, coord_uncertainty_cap_m=cap):
+#               acc.add(o.species)
+#       return sorted(acc)
+
+
+# -----------------------------------------------------------------------------
+# 2c.3  build_index
+# -----------------------------------------------------------------------------
+# Signature:
+#   build_index(territories:    List[Territory],
+#               occurrences:    List[Occurrence],
+#               species_master: List[Species],
+#               profile_slugs:  Set[str],
+#               *,
+#               coord_uncertainty_cap_m: int
+#                   = DEFAULT_COORD_UNCERTAINTY_CAP_M,
+#               now: Optional[datetime] = None
+#              ) -> TerritorySpeciesIndex
+#
+# Purpose:
+#   Build the full pre-sovereignty TerritorySpeciesIndex.  For every
+#   territory in `territories`:
+#
+#     1.  Determine which occurrences qualify for the polygon (single
+#         shapely pass; reuse, do not recompute, per occurrence).
+#     2.  Derive: occurrence_count (raw), species_count (distinct binomials),
+#         all_species (sorted distinct binomials).
+#     3.  Build the ProfiledSpecies list:
+#           - Annotate species_master rows with has_profile / profile_slug
+#             by matching kebab-cased binomial against profile_slugs.
+#             (This is the profile-annotation step deliberately deferred
+#             out of read_vascan_master.)
+#           - Group by binomial (multiple rows -- species + var + subsp --
+#             collapse into one ProfiledSpecies with vascan_ids = [...]).
+#           - Keep only those whose binomial is in all_species AND
+#             has_profile is True.
+#           - scientific_name_full of the ProfiledSpecies is the canonical
+#             species row's name (taxon_rank == "species"); fall back to the
+#             first row if no canonical species row exists.
+#         Stable order: alphabetised by binomial.
+#     4.  Stamp coord_uncertainty_cap_m and built_at on every entry.
+#         built_at uses `now or datetime.now(timezone.utc)`, formatted
+#         "YYYY-MM-DDTHH:MMZ".  `now` is injectable so tests are deterministic.
+#     5.  Emit every entry with visibility="public".  Sovereignty projection
+#         is a separate pass (apply_sovereignty), called by main(); this
+#         function is sovereignty-agnostic on purpose.
+#
+#   Returns a dict keyed by Territory.slug, one entry per input territory.
+#   No territories are dropped here; dropping is apply_sovereignty's job.
+#
+# Examples:
+#   territories = [t_bc]                       # one BC-ish polygon
+#   occurrences = [o_doug, o_kinnikinnick, o_far_east]
+#   master      = [s_doug_fir, s_kinnikinnick_species, s_kinnikinnick_variety,
+#                  s_zostera_marina]
+#   profiles    = {"arctostaphylos-uva-ursi"}  # only kinnikinnick profiled
+#
+#   idx = build_index(territories, occurrences, master, profiles,
+#                     now=datetime(2026,5,22,18,30, tzinfo=timezone.utc))
+#
+#   idx["t"].visibility              == "public"
+#   idx["t"].occurrence_count        == 2
+#   idx["t"].species_count           == 2
+#   idx["t"].all_species             == ["Arctostaphylos uva-ursi",
+#                                        "Pseudotsuga menziesii"]
+#   len(idx["t"].profiled_species)   == 1
+#   idx["t"].profiled_species[0].binomial     == "Arctostaphylos uva-ursi"
+#   idx["t"].profiled_species[0].vascan_ids   == [4821, 4822]  # species + var
+#   idx["t"].coord_uncertainty_cap_m == 10_000
+#   idx["t"].built_at                == "2026-05-22T18:30Z"
+#
+#   build_index([], [], [], set()) == {}
+#
+# Template:
+#   def build_index(territories, occurrences, master, profiles, *, cap, now):
+#       built_at = ...(now)
+#       profiled_lookup = ...(master, profiles)          # binomial -> ProfiledSpecies
+#       acc: TerritorySpeciesIndex = {}
+#       for t in territories:                            # arbitrary-sized
+#           qualifying = [o for o in occurrences
+#                         if point_in_territory(o, t, coord_uncertainty_cap_m=cap)]
+#           binomials  = sorted({o.species for o in qualifying})
+#           profiled   = [profiled_lookup[b] for b in binomials
+#                         if b in profiled_lookup]
+#           acc[t.slug] = TerritoryEntry(
+#               visibility="public",
+#               name=t.name, description_url=t.description,
+#               species_count=len(binomials),
+#               occurrence_count=len(qualifying),
+#               profiled_species=profiled,
+#               all_species=binomials,
+#               coord_uncertainty_cap_m=cap,
+#               built_at=built_at,
+#           )
+#       return acc
+
+
+# -----------------------------------------------------------------------------
+# 2c.4  apply_sovereignty
+# -----------------------------------------------------------------------------
+# Signature:
+#   apply_sovereignty(index:             TerritorySpeciesIndex,
+#                     visibility_config: Dict[str, Visibility]
+#                    ) -> TerritorySpeciesIndex
+#
+# Purpose:
+#   Project `index` to its public-safe form.  Pure function; input is not
+#   mutated.  For each (slug, entry):
+#
+#     visibility_config.get(slug, "public") drives the projection:
+#
+#       "public"            -> entry copied through unchanged
+#                              (already has visibility="public" from
+#                              build_index; restamp anyway, defensive).
+#
+#       "nation-only"       -> entry retained with:
+#                                visibility       = "nation-only"
+#                                species_count    = None
+#                                occurrence_count = None
+#                                profiled_species = []
+#                                all_species      = None
+#                              name, description_url, coord_uncertainty_cap_m,
+#                              built_at preserved.
+#
+#       "redacted"          -> slug DROPPED from output dict entirely.
+#       "delete-on-request" -> slug DROPPED from output dict entirely.
+#                              (Renderer falls back to "polygon with no
+#                              popup data" -- but at the data layer the slug
+#                              is just gone.)
+#
+#   Any visibility_config slug not present in `index` is silently ignored
+#   (configuration may legitimately reference future polygons not yet
+#   pulled).  Any index slug not present in visibility_config defaults to
+#   "public".
+#
+# Examples:
+#   idx = {
+#     "a": TerritoryEntry(visibility="public", name="A", ..., species_count=10, ...),
+#     "b": TerritoryEntry(visibility="public", name="B", ..., species_count=20, ...),
+#     "c": TerritoryEntry(visibility="public", name="C", ..., species_count=30, ...),
+#   }
+#   cfg = {"b": "nation-only", "c": "redacted", "ghost": "nation-only"}
+#
+#   out = apply_sovereignty(idx, cfg)
+#   set(out.keys())                == {"a", "b"}             # c dropped
+#   out["a"].visibility            == "public"
+#   out["a"].species_count         == 10                     # unchanged
+#   out["b"].visibility            == "nation-only"
+#   out["b"].species_count         == None
+#   out["b"].all_species           == None
+#   out["b"].profiled_species      == []
+#   out["b"].name                  == "B"                    # preserved
+#   "ghost" not in out                                       # silently skipped
+#
+#   apply_sovereignty({}, {}) == {}
+#
+# Template:
+#   def apply_sovereignty(idx, cfg):
+#       out: TerritorySpeciesIndex = {}
+#       for slug, entry in idx.items():                      # arbitrary-sized
+#           v = cfg.get(slug, "public")
+#           if v == "public":
+#               out[slug] = ...(entry)
+#           elif v == "nation-only":
+#               out[slug] = ...(entry)                       # null counts/lists
+#           elif v == "redacted":
+#               continue                                     # drop
+#           elif v == "delete-on-request":
+#               continue                                     # drop
+#       return out
+
+
+# -----------------------------------------------------------------------------
+# main(): wires reads -> build_index -> apply_sovereignty -> JSON write.
+# Designed in 2c after the four analysis functions above are reviewed.
+# -----------------------------------------------------------------------------
+
