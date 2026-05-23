@@ -22,6 +22,9 @@ future React/MapLibre/Mapbox stack without re-derivation.
 | Authored species profiles | `species/*.qmd` | 9 files. Filename stem = profile slug (e.g. `arctostaphylos-uva-ursi.qmd`). | These are the only species we currently deep-link to. |
 | Propagation protocols | `data/protocols/` | Scoping notes only — `INTEGRATION-NOTES.md`, `SOURCES.md`. No structured records yet. | Out of scope for Phase 2 (Phase 3 work). |
 
+**Not used in Phase 2 MVP, but architecturally accounted for:**
+- Indigenous / local names. See [`LOCAL-NAMES-PRINCIPLES.md`](LOCAL-NAMES-PRINCIPLES.md) — `LocalName` and `NameRelationship` are designed as peer data types to `Species`, not fields on it. No local-name data is loaded in Phase 2; the principles doc records the contract that future ingestion must satisfy.
+
 **Not used in Phase 2 MVP** (deferred to a later iteration of the same map page):
 - `data/bec/` — BEC zone polygons (toggle stub only)
 - `data/soil/` — soil layer (toggle stub only)
