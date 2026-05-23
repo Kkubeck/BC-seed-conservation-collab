@@ -1,0 +1,26 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"Slug": "first", "Name": "First", "description": "https://example/first", "color": "#111111"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-123, 49], [-122, 49], [-122, 50], [-123, 50], [-123, 49]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"Slug": "second-with-diacritics", "Name": "S'ólh Téméxw", "description": "https://example/second", "color": "#222222"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-124, 48], [-123, 48], [-123, 49], [-124, 49], [-124, 48]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"Slug": "third-multi", "Name": "Third (MultiPolygon)", "description": "https://example/third", "color": "#333333"},
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [[[-125, 50], [-124, 50], [-124, 51], [-125, 51], [-125, 50]]],
+          [[[-126, 52], [-125, 52], [-125, 53], [-126, 53], [-126, 52]]]
+        ]
+      }
+    }
+  ]
+}

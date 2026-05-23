@@ -25,9 +25,14 @@ to Species, not fields on it, and are out of scope for Phase 2.
 
 from __future__ import annotations
 
+import csv
+import json
 from dataclasses import dataclass
-from datetime import date
-from typing import Dict, List, Literal, Optional
+from datetime import date, datetime
+from pathlib import Path
+from typing import Dict, List, Literal, Optional, Set
+
+import yaml
 
 
 # =============================================================================
@@ -514,6 +519,171 @@ TerritorySpeciesIndex = Dict[str, TerritoryEntry]
 
 
 # =============================================================================
-# Read functions, analysis functions, and main():
-#   to be designed next, in Phase 2b and 2c.
+# Phase 2b — Read functions
+# =============================================================================
+# Each read function is pure I/O over one source file.  No joins, no
+# enrichment, no annotation -- those live in Phase 2c so reads stay
+# trivially testable against fixtures.  HtDP fixtures live in
+# tests/fixtures/, three flavours per source (empty / one / many).
+
+
+def read_territories(path: str) -> List[Territory]:
+    # Signature: str -> List[Territory]
+    # Purpose:   Load a GeoJSON FeatureCollection from `path` and return one
+    #            Territory per feature.  Properties expected:
+    #            Slug, Name, description, color.  Geometry is passed through
+    #            unchanged as a dict (Leaflet consumes it directly).
+    # Examples:  read_territories("tests/fixtures/territories_empty.geojson")
+    #              -> []
+    #            read_territories("tests/fixtures/territories_one.geojson")
+    #              -> [Territory(slug="test-nation", ...)]
+    # Template:  arbitrary-sized (loop over features.values, accumulate).
+    with open(path) as f:
+        doc = json.load(f)
+    acc: List[Territory] = []
+    for feature in doc.get("features", []):
+        props = feature.get("properties", {}) or {}
+        acc.append(Territory(
+            slug=props["Slug"],
+            name=props["Name"],
+            description=props.get("description", "") or "",
+            geometry=feature.get("geometry", {}) or {},
+            color=props.get("color", "") or "",
+        ))
+    return acc
+
+
+def read_occurrences(path: str) -> List[Occurrence]:
+    # Signature: str -> List[Occurrence]
+    # Purpose:   Load a GBIF-style CSV from `path` and return one Occurrence
+    #            per row.  Expected columns (extras ignored): species,
+    #            decimalLatitude, decimalLongitude, year, eventDate (optional
+    #            column; absent in current sample), basisOfRecord,
+    #            coordinateUncertaintyInMeters, datasetName.
+    #            Empty CSV cells map to None for Optional fields.  Type
+    #            coercion is the only logic applied here.
+    # Examples:  read_occurrences("tests/fixtures/occurrences_empty.csv")
+    #              -> []
+    #            read_occurrences(many).len == 3 and second row has
+    #              event_date=None, coord_uncertainty_m=None
+    # Template:  arbitrary-sized over DictReader rows.
+    with open(path) as f:
+        rows = list(csv.DictReader(f))
+    acc: List[Occurrence] = []
+    for row in rows:
+        acc.append(Occurrence(
+            species=row["species"],
+            lat=float(row["decimalLatitude"]),
+            lon=float(row["decimalLongitude"]),
+            year=int(row["year"]),
+            event_date=_parse_iso_date(row.get("eventDate")),
+            basis_of_record=row["basisOfRecord"],  # trusted; GBIF vocab
+            coord_uncertainty_m=_parse_optional_float(row.get("coordinateUncertaintyInMeters")),
+            dataset_name=row.get("datasetName") or None,
+        ))
+    return acc
+
+
+def read_vascan_master(path: str) -> List[Species]:
+    # Signature: str -> List[Species]
+    # Purpose:   Load the BC-native VASCAN master CSV from `path`.  Every row
+    #            yields one Species with has_profile=False, profile_slug=None.
+    #            Profile annotation is a Phase 2c analysis step, intentionally
+    #            kept out of the read function so reads remain pure I/O.
+    # Examples:  read_vascan_master("tests/fixtures/vascan_empty.csv") -> []
+    #            read_vascan_master(one).len == 1 and that row has
+    #              infraspecific_epithet=None, authorship=None, has_profile=False
+    # Template:  arbitrary-sized over DictReader rows.
+    with open(path) as f:
+        rows = list(csv.DictReader(f))
+    acc: List[Species] = []
+    for row in rows:
+        genus = row["genus"]
+        epithet = row["specificEpithet"]
+        acc.append(Species(
+            vascan_id=int(row["id"]),
+            scientific_name_full=row["scientificName"],
+            family=row["family"],
+            genus=genus,
+            specific_epithet=epithet,
+            infraspecific_epithet=row.get("infraspecificEpithet") or None,
+            taxon_rank=row["taxonRank"],            # trusted vs enum
+            authorship=row.get("scientificNameAuthorship") or None,
+            binomial=f"{genus} {epithet}",
+            has_profile=False,
+            profile_slug=None,
+        ))
+    return acc
+
+
+def read_authored_profiles(species_dir: str) -> Set[str]:
+    # Signature: str -> Set[str]
+    # Purpose:   Return the set of profile slugs found in `species_dir`, one
+    #            per *.qmd file (filename stem).  Used by Phase 2c to
+    #            annotate Species rows with has_profile / profile_slug.
+    # Examples:  read_authored_profiles("tests/fixtures/profiles_empty") -> set()
+    #            read_authored_profiles("tests/fixtures/profiles_some")
+    #              -> {"arctostaphylos-uva-ursi", "symphoricarpos-albus"}
+    # Template:  arbitrary-sized over Path.glob results.
+    return {p.stem for p in Path(species_dir).glob("*.qmd")}
+
+
+def read_visibility_config(path: str) -> Dict[str, Visibility]:
+    # Signature: str -> Dict[territory_slug, Visibility]
+    # Purpose:   Load the per-slug visibility overrides from a YAML file.
+    #            Missing keys at lookup time mean "use the Phase 2 default"
+    #            ("public") -- that resolution happens in 2c, not here.
+    #            Validates that every value is a member of the Visibility
+    #            enumeration; raises ValueError otherwise (loud failure on
+    #            misconfiguration beats silent "public" exposure of a Nation
+    #            that asked for restriction).
+    # Examples:  read_visibility_config("tests/fixtures/visibility_empty.yml") -> {}
+    #            read_visibility_config("tests/fixtures/visibility_some.yml")
+    #              -> {"second-with-diacritics": "nation-only",
+    #                  "third-multi": "redacted"}
+    # Template:  compound (dict) -> validate each pair -> compound.
+    with open(path) as f:
+        loaded = yaml.safe_load(f)
+    if loaded is None:                              # empty file
+        return {}
+    if not isinstance(loaded, dict):
+        raise ValueError(f"{path}: expected a YAML mapping at the top level")
+    valid = {"public", "nation-only", "redacted", "delete-on-request"}
+    out: Dict[str, Visibility] = {}
+    for slug, value in loaded.items():
+        if value not in valid:
+            raise ValueError(
+                f"{path}: slug {slug!r} has invalid visibility {value!r}; "
+                f"must be one of {sorted(valid)}"
+            )
+        out[str(slug)] = value
+    return out
+
+
+# ---------------------------------------------------------------------------
+# Small helpers — kept private (leading underscore) and minimal.
+# These exist only to keep the read functions' bodies linear; they have no
+# data definition of their own beyond their docstrings.
+# ---------------------------------------------------------------------------
+
+def _parse_optional_float(value: Optional[str]) -> Optional[float]:
+    # str|None -> Optional[float].  Empty/None -> None; otherwise float(value).
+    if value is None or value == "":
+        return None
+    return float(value)
+
+
+def _parse_iso_date(value: Optional[str]) -> Optional[date]:
+    # str|None -> Optional[date].  Accepts full ISO date "YYYY-MM-DD".
+    # Anything else (year-only, year-month, empty, None) -> None.
+    if value is None or value == "":
+        return None
+    try:
+        return datetime.strptime(value, "%Y-%m-%d").date()
+    except ValueError:
+        return None
+
+
+# =============================================================================
+# Analysis functions and main(): Phase 2c — next.
 # =============================================================================

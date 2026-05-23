@@ -1,0 +1,4 @@
+species,decimalLatitude,decimalLongitude,year,eventDate,basisOfRecord,coordinateUncertaintyInMeters,datasetName
+Pseudotsuga menziesii,49.301068,-123.139775,2026,2026-05-14,HUMAN_OBSERVATION,15.0,iNaturalist research-grade observations
+Arctostaphylos uva-ursi,50.123,-122.456,2019,,PRESERVED_SPECIMEN,,UBC Herbarium
+Symphoricarpos albus,52.0,-120.5,2024,2024-07-01,HUMAN_OBSERVATION,200.0,

@@ -1,0 +1,5 @@
+# Per-slug visibility overrides.  Slugs not listed default to "public"
+# at lookup time (Phase 2 default — see Visibility definition in
+# scripts/build_territory_species_index.py).
+second-with-diacritics: nation-only
+third-multi: redacted
