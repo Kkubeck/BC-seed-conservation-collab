@@ -28,11 +28,12 @@ from __future__ import annotations
 import csv
 import json
 from dataclasses import dataclass
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Literal, Optional, Set
 
 import yaml
+from shapely.geometry import shape as shapely_shape, Point
 
 
 # =============================================================================
@@ -984,7 +985,149 @@ DEFAULT_COORD_UNCERTAINTY_CAP_M = 10_000
 
 
 # -----------------------------------------------------------------------------
+# Bodies
+# -----------------------------------------------------------------------------
+
+def point_in_territory(
+    occurrence: "Occurrence",
+    territory:  "Territory",
+    *,
+    coord_uncertainty_cap_m: int = DEFAULT_COORD_UNCERTAINTY_CAP_M,
+) -> bool:
+    u = occurrence.coord_uncertainty_m
+    if u is not None and u > coord_uncertainty_cap_m:
+        return False
+    poly = shapely_shape(territory.geometry)
+    return poly.contains(Point(occurrence.lon, occurrence.lat))
+
+
+def species_in_territory(
+    territory:   "Territory",
+    occurrences: List["Occurrence"],
+    *,
+    coord_uncertainty_cap_m: int = DEFAULT_COORD_UNCERTAINTY_CAP_M,
+) -> List[str]:
+    # Compile the polygon once; reuse across all occurrences for this territory.
+    poly = shapely_shape(territory.geometry)
+    found: Set[str] = set()
+    for o in occurrences:
+        u = o.coord_uncertainty_m
+        if u is not None and u > coord_uncertainty_cap_m:
+            continue
+        if poly.contains(Point(o.lon, o.lat)):
+            found.add(o.species)
+    return sorted(found)
+
+
+def _kebab(binomial: str) -> str:
+    # "Arctostaphylos uva-ursi" -> "arctostaphylos-uva-ursi"
+    return binomial.lower().replace(" ", "-")
+
+
+def _build_profiled_lookup(
+    species_master: List["Species"],
+    profile_slugs:  Set[str],
+) -> Dict[str, "ProfiledSpecies"]:
+    # Group VASCAN rows by binomial; collapse profile-bearing groups into one
+    # ProfiledSpecies per binomial with vascan_ids=[all rows sharing it].
+    # scientific_name_full prefers the canonical taxon_rank == "species" row;
+    # falls back to the first row if no canonical row exists in the group.
+    by_binomial: Dict[str, List["Species"]] = {}
+    for s in species_master:
+        by_binomial.setdefault(s.binomial, []).append(s)
+
+    out: Dict[str, ProfiledSpecies] = {}
+    for binomial, rows in by_binomial.items():
+        slug = _kebab(binomial)
+        if slug not in profile_slugs:
+            continue
+        canonical = next((r for r in rows if r.taxon_rank == "species"), rows[0])
+        out[binomial] = ProfiledSpecies(
+            binomial=binomial,
+            profile_slug=slug,
+            scientific_name_full=canonical.scientific_name_full,
+            vascan_ids=sorted(r.vascan_id for r in rows),
+        )
+    return out
+
+
+def build_index(
+    territories:    List["Territory"],
+    occurrences:    List["Occurrence"],
+    species_master: List["Species"],
+    profile_slugs:  Set[str],
+    *,
+    coord_uncertainty_cap_m: int = DEFAULT_COORD_UNCERTAINTY_CAP_M,
+    now: Optional[datetime] = None,
+) -> "TerritorySpeciesIndex":
+    built_at = (now or datetime.now(timezone.utc)).strftime("%Y-%m-%dT%H:%MZ")
+    profiled_lookup = _build_profiled_lookup(species_master, profile_slugs)
+
+    acc: TerritorySpeciesIndex = {}
+    for t in territories:
+        poly = shapely_shape(t.geometry)
+        qualifying: List[Occurrence] = []
+        for o in occurrences:
+            u = o.coord_uncertainty_m
+            if u is not None and u > coord_uncertainty_cap_m:
+                continue
+            if poly.contains(Point(o.lon, o.lat)):
+                qualifying.append(o)
+
+        binomials = sorted({o.species for o in qualifying})
+        profiled  = [profiled_lookup[b] for b in binomials if b in profiled_lookup]
+
+        acc[t.slug] = TerritoryEntry(
+            visibility="public",
+            name=t.name,
+            description_url=t.description,
+            species_count=len(binomials),
+            occurrence_count=len(qualifying),
+            profiled_species=profiled,
+            all_species=binomials,
+            coord_uncertainty_cap_m=coord_uncertainty_cap_m,
+            built_at=built_at,
+        )
+    return acc
+
+
+def apply_sovereignty(
+    index:             "TerritorySpeciesIndex",
+    visibility_config: Dict[str, "Visibility"],
+) -> "TerritorySpeciesIndex":
+    out: TerritorySpeciesIndex = {}
+    for slug, entry in index.items():
+        v = visibility_config.get(slug, "public")
+        if v == "public":
+            out[slug] = TerritoryEntry(
+                visibility="public",
+                name=entry.name,
+                description_url=entry.description_url,
+                species_count=entry.species_count,
+                occurrence_count=entry.occurrence_count,
+                profiled_species=entry.profiled_species,
+                all_species=entry.all_species,
+                coord_uncertainty_cap_m=entry.coord_uncertainty_cap_m,
+                built_at=entry.built_at,
+            )
+        elif v == "nation-only":
+            out[slug] = TerritoryEntry(
+                visibility="nation-only",
+                name=entry.name,
+                description_url=entry.description_url,
+                species_count=None,
+                occurrence_count=None,
+                profiled_species=[],
+                all_species=None,
+                coord_uncertainty_cap_m=entry.coord_uncertainty_cap_m,
+                built_at=entry.built_at,
+            )
+        # "redacted" and "delete-on-request" intentionally drop the slug.
+    return out
+
+
+# -----------------------------------------------------------------------------
 # main(): wires reads -> build_index -> apply_sovereignty -> JSON write.
-# Designed in 2c after the four analysis functions above are reviewed.
+# Designed after analysis functions; placeholder until then.
 # -----------------------------------------------------------------------------
 
