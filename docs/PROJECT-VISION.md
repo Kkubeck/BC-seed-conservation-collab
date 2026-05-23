@@ -17,12 +17,11 @@ Feed data to the BC Provincial Seed Bank. But more importantly: build a warehous
 - BC has ~2,000+ native vascular plant species, ~595 at risk (~30%)
 - Propagation protocols exist scattered across institutions, notebooks, and individual expertise
 - No centralized, public, freely accessible source of "how to grow BC's native plants"
-- First Nations communities lack accessible tools to understand what grows on their territory and how to propagate it
-- Institutional conservation work is gatekept by career incentives, not shared freely
+- First Nations communities may lack accessible tools to understand what grows on their territory and how to propagate it
 
 ## Core Audiences
 
-1. **BC First Nations** — territory-specific species maps + propagation guides for cultural and ecological plants
+1. **BC First Nations Nursery** — territory-specific species maps + propagation guides for cultural and ecological plants
 2. **Provincial Seed Bank** — standardized germination data and yield optimization
 3. **Restoration practitioners** — reliable, scalable protocols
 4. **Students & researchers** — collaborative contribution platform
