@@ -72,7 +72,7 @@ Planned types:
 1. `Territory` — compound: `(id, slug, name, geometry, color)`
 2. `Occurrence` — compound: `(species, lat, lon, year, basis_of_record, coord_uncertainty_m, dataset_name)`
 3. `Species` — compound: `(scientific_name, vascan_id, has_profile: bool, profile_slug: Optional[str])`
-4. `NationVisibility` — enumeration: `{"public", "nation-only", "redacted"}`
+4. `Visibility` — enumeration: `{"public", "nation-only", "redacted", "delete-on-request"}`. `redacted` and `delete-on-request` have identical effect at build time (slug omitted from output); the distinct label preserves an audit trail when a Nation specifically asked for removal.
 5. `TerritorySpeciesIndex` — compound: `{territory_id: {species_count, species_with_profiles, all_species}}`
 
 Each definition will include: type, interpretation comment, ≥1 example, template.
@@ -83,7 +83,7 @@ Each definition will include: type, interpretation comment, ≥1 example, templa
 - `read_occurrences(path) -> List[Occurrence]`
 - `read_vascan_master(path) -> List[Species]`
 - `read_authored_profiles(dir) -> Set[profile_slug]`
-- `read_nation_visibility(path) -> Dict[territory_slug, NationVisibility]`
+- `read_visibility_config(path) -> Dict[territory_slug, Visibility]`
 
 Each with three tiny fixture files (empty / one-row / multi-row with missing values) before any analysis function runs.
 
@@ -99,8 +99,8 @@ Each with three tiny fixture files (empty / one-row / multi-row with missing val
 `map.qmd` consuming three artifacts:
 
 - `data/territories/bc-territories.geojson` (already exists)
-- `data/derived/territory_species_index.json` (built by 2c)
-- `config/nations.yml` (sovereignty config — start with all `public`)
+- `data/territory_species_index.json` (built by 2c; gitignored as a build artifact)
+- `data/territories/visibility.yml` (sovereignty config — empty by default, every territory resolves to `public`)
 
 OJS code block initializes Leaflet, renders the territory layer, attaches
 click handlers that look up the territory in the index, and renders the
@@ -109,6 +109,6 @@ popup HTML. Layer toggles are wired as no-op stubs for BEC/soil/roads.
 ### Portability check
 
 Phase 3+ may swap the view layer (e.g., React + MapLibre, native app, etc.).
-The derived files in `data/derived/` and `config/nations.yml` are the
+The derived `data/territory_species_index.json` and `data/territories/visibility.yml` are the
 contract — they live independent of Quarto and remain valid inputs to any
 future renderer.
