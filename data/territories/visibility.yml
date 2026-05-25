@@ -1,0 +1,26 @@
+# Per-territory visibility overrides for the territory -> species index.
+#
+# Default (no entry here): "public"
+#   The territory polygons come from Native Land Digital's public API; every
+#   Nation listed there has already chosen public visibility on NLD's map.
+#   "public" is therefore the default — visibility.yml exists only so a
+#   Nation can opt *down* when they tell us to.
+#
+# Allowed values (see scripts/build_territory_species_index.py, type Visibility):
+#   public             - full species list + counts shown in map popup.
+#   nation-only        - territory polygon still shown, but species_count,
+#                        occurrence_count, and species lists are withheld.
+#   redacted           - territory slug omitted from the output entirely.
+#                        The polygon may still render on the basemap, but no
+#                        species data is associated with it.
+#   delete-on-request  - same effect as redacted at build time; the label
+#                        records that the Nation specifically asked for their
+#                        data to be removed (audit trail for ourselves).
+#
+# Format: a YAML mapping of territory slug -> visibility value, e.g.
+#
+#   secwepemc:        nation-only
+#   syilx-okanagan:   redacted
+#
+# Slugs must match those in data/territories/bc-territories.geojson.
+# Loud failure on unknown values — see read_visibility_config().

@@ -40,6 +40,9 @@ Thumbs.db
 _site/
 .quarto/
 
+# Build artifacts
+data/territory_species_index.json
+
 # Environment
 .env
 *.env

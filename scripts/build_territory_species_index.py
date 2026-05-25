@@ -25,8 +25,11 @@ to Species, not fields on it, and are out of scope for Phase 2.
 
 from __future__ import annotations
 
+import argparse
 import csv
+import dataclasses
 import json
+import sys
 from dataclasses import dataclass
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -1128,6 +1131,106 @@ def apply_sovereignty(
 
 # -----------------------------------------------------------------------------
 # main(): wires reads -> build_index -> apply_sovereignty -> JSON write.
-# Designed after analysis functions; placeholder until then.
+#
+# Pipeline:
+#   1. Parse CLI flags (input paths + uncertainty cap + output path).
+#   2. Read territories, occurrences, species master, profile slugs, visibility.
+#   3. build_index(...)            -> pre-sovereignty TerritorySpeciesIndex.
+#   4. apply_sovereignty(...)      -> public-safe projection.
+#   5. Serialise to JSON (dataclasses -> dicts) and write to --output.
+#   6. Emit a one-line summary to stderr.
 # -----------------------------------------------------------------------------
+
+def _to_jsonable(obj):
+    # Recursive dataclass/dict/list unwrap.  dataclasses.asdict handles nested
+    # dataclasses on its own; we just need to walk the outer index dict.
+    if dataclasses.is_dataclass(obj):
+        return dataclasses.asdict(obj)
+    if isinstance(obj, dict):
+        return {k: _to_jsonable(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_to_jsonable(v) for v in obj]
+    return obj
+
+
+def main(argv: Optional[List[str]] = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Build the territory -> species index JSON for the map page.",
+    )
+    parser.add_argument(
+        "--territories",
+        default="data/territories/bc-territories.geojson",
+        help="GeoJSON FeatureCollection of First Nations territories.",
+    )
+    parser.add_argument(
+        "--occurrences",
+        default="data/gbif/gbif_sample_occurrences.csv",
+        help="GBIF-style occurrences CSV.",
+    )
+    parser.add_argument(
+        "--vascan-master",
+        default="data/bc_native_vascan_master.csv",
+        help="BC-native VASCAN master CSV.",
+    )
+    parser.add_argument(
+        "--profiles-dir",
+        default="species",
+        help="Directory of authored species/{slug}.qmd profile files.",
+    )
+    parser.add_argument(
+        "--visibility-config",
+        default="data/territories/visibility.yml",
+        help="YAML mapping of territory slug -> Visibility.",
+    )
+    parser.add_argument(
+        "--coord-uncertainty-cap-m",
+        type=int,
+        default=DEFAULT_COORD_UNCERTAINTY_CAP_M,
+        help="Exclude occurrences whose coordinateUncertaintyInMeters exceeds this.",
+    )
+    parser.add_argument(
+        "--output",
+        default="data/territory_species_index.json",
+        help="Path to write the post-sovereignty index JSON.",
+    )
+    args = parser.parse_args(argv)
+
+    territories    = read_territories(args.territories)
+    occurrences    = read_occurrences(args.occurrences)
+    species_master = read_vascan_master(args.vascan_master)
+    profile_slugs  = read_authored_profiles(args.profiles_dir)
+    visibility_cfg = read_visibility_config(args.visibility_config)
+
+    raw_index    = build_index(
+        territories, occurrences, species_master, profile_slugs,
+        coord_uncertainty_cap_m=args.coord_uncertainty_cap_m,
+    )
+    public_index = apply_sovereignty(raw_index, visibility_cfg)
+
+    out_path = Path(args.output)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(_to_jsonable(public_index), f,
+                  indent=2, sort_keys=False, ensure_ascii=False)
+
+    # Honest reporting: unique species across PUBLIC entries only.
+    # nation-only entries have all_species=None (counts withheld by design),
+    # so they contribute nothing to the union but are reported separately.
+    public_entries      = [e for e in public_index.values() if e.visibility == "public"]
+    nation_only_entries = [e for e in public_index.values() if e.visibility == "nation-only"]
+    unique_species: Set[str] = set()
+    for e in public_entries:
+        unique_species.update(e.all_species or [])
+    print(
+        f"wrote {len(public_index)} territories "
+        f"({len(public_entries)} public, {len(nation_only_entries)} nation-only); "
+        f"{len(unique_species)} unique species across public entries "
+        f"-> {out_path}",
+        file=sys.stderr,
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
 
