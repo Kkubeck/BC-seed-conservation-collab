@@ -25,7 +25,7 @@ Feed data to the BC Provincial Seed Bank. But more importantly: build a warehous
 2. **Provincial Seed Bank** — standardized germination data and yield optimization
 3. **Restoration practitioners** — reliable, scalable protocols
 4. **Students & researchers** — collaborative contribution platform
-5. **Other botanical gardens** — inter-garden protocol sharing
+5. **Botanical gardens** — inter-garden protocol sharing
 
 ## Data Layers
 
@@ -70,7 +70,7 @@ Feed data to the BC Provincial Seed Bank. But more importantly: build a warehous
 - Practical layer for seed collection planning
 
 ### 8. Data Sovereignty Controls (the "who decides")
-- **FIRST-CLASS ARCHITECTURAL REQUIREMENT — not an afterthought**
+- **FIRST-CLASS ARCHITECTURAL REQUIREMENT**
 - Per-nation control over spatial data visibility within their territory
 - Default: GPS coordinates obscured
 - Nation chooses precision level: full coords / grid-cell / territory-level / fully hidden
@@ -80,7 +80,7 @@ Feed data to the BC Provincial Seed Bank. But more importantly: build a warehous
 ## Architecture (TBD)
 
 ### Current state
-- Quarto website with 9 species profiles, searchable database, student portal
+- Demonstration quarto website with 9 species profiles, searchable database, student portal
 - GitHub Pages deployment
 
 ### Likely evolution
@@ -121,7 +121,7 @@ Feed data to the BC Provincial Seed Bank. But more importantly: build a warehous
 - [ ] Link to existing Quarto species profiles where available
 
 ### Phase 3: Propagation Data Integration
-- [ ] Connect card reader OCR pipeline output
+- [ ] Connect to propagation database
 - [ ] Template system for structured protocol entry
 - [ ] Map protocols to species catalog entries
 - [ ] Yield/success data visualization
@@ -135,9 +135,9 @@ Feed data to the BC Provincial Seed Bank. But more importantly: build a warehous
 ## Key Relationships
 
 - **BC First Nations Nursery**: Testing partners and stakeholder
-- **UBC Botanical Garden:** Potential information seed source institution but not intended the gatekeeper
+- **UBC Botanical Garden:** Potential information seed source institution but not intended gatekeeper
 - **BC Provincial Seed Bank:** Potential intended data consumer and collaboration partner
-- **HTP/Hort students:** Existing contribution model via student portal
+- **UBCBG HTP/Hort students:** Existing contribution model via student portal
 
 ## Political Context
 
